@@ -1,88 +1,97 @@
 @charset "UTF-8";
 
-        section {
-            width: 1500px;
-            height: 1150px;
-            border: 1px solid black;
-            box-sizing: border-box;
-            text-align: center;
-        }
+section {
+	width: 1500px;
+	height: 1300px;
+	border: 1px solid black;
+	box-sizing: border-box;
+	text-align: center;
+}
 
-        #content1, #content2, #content3 {
-            box-sizing: border-box;
-            border: 1px solid red;
-        }
+#content1, #content2, #content3 {
+	box-sizing: border-box;
+	border: 1px solid red;
+}
 
-        #content1 {
-            height: 5%;
-        }
+#content1 {
+	height: 5%;
+}
 
-        #content2 {
-            height: 90%;
-           
-        }
-            #content2 .join {
-                width: 60%;
-                text-align: center;
-                border: 1px solid #000560;
-                box-sizing:border-box;
-                margin-top: 40px;
-            }
+#content2 {
+	height: 90%;
+}
 
-        .join_table {
-            border-radius: 4px;
-        }
-        .join_table caption {
-            background-color: #000560;
-            font-size: 2em;
-            color: whitesmoke;
-            padding: 5px 0 ;
-        }
-        .join_table th {
-            text-align: center;
-            width: 200px;
-            font-size: 1.5em;
-        }
-            
-            .join_table td {
-                width: 150px;
-                height: 30px;
-                padding: 20px 0;
-            }
-        input[type='text'], input[type='password'], input[type='number'], input[type='email'] {
-            width: 400px;
-            height: 50px;
-            margin-left: 10px;
-            border: 2px solid gray;
-            font-size: 2em;
-            text-align: center;
-        }
+#content2 .join {
+	width: 60%;
+	text-align: center;
+	border: 1px solid #000560;
+	box-sizing: border-box;
+	margin-top: 40px;
+}
 
-            input[type='radio'] {
-               width: 20%;
-               margin: 0;
-            }
-            label {
-            	font-size : 1.3em;
-            }
+.join_table {
+	border-radius: 4px;
+}
 
-        input[type='submit'], input[type='reset'], input[type='button'] {
-            width: 125px;
-            height: 60px;
-            border: none;
-            outline: none;
-            color: whitesmoke;
-            background-color: #000560;
-            font-size: 1.4em;
-            margin-top: 10px;
-        }
+.join_table caption {
+	background-color: #000560;
+	font-size: 2em;
+	color: whitesmoke;
+	padding: 5px 0;
+}
 
-        input[type='reset'] {
-            background-color: whitesmoke;
-            color: #000560;
-            border: 1px solid #000560;
-        }
+.join_table th {
+	text-align: center;
+	width: 200px;
+	font-size: 1.5em;
+}
 
-        #content3 {
-            height: 5%;
-        }
+.join_table td {
+	width: 150px;
+	height: 30px;
+	padding: 20px 0;
+}
+
+input[type='text'], input[type='password'], input[type='number'], input[type='email']
+	{
+	width: 400px;
+	height: 50px;
+	margin-left: 10px;
+	border: 2px solid gray;
+	font-size: 2em;
+	text-align: center;
+}
+
+input[type='radio'] {
+	width: 20%;
+	margin: 0;
+}
+
+input[type='file'] {
+	margin-left: 110px;
+}
+
+label {
+	font-size: 1.3em;
+}
+
+input[type='submit'], input[type='reset'], input[type='button'] {
+	width: 125px;
+	height: 60px;
+	border: none;
+	outline: none;
+	color: whitesmoke;
+	background-color: #000560;
+	font-size: 1.4em;
+	margin-top: 10px;
+}
+
+input[type='reset'] {
+	background-color: whitesmoke;
+	color: #000560;
+	border: 1px solid #000560;
+}
+
+#content3 {
+	height: 5%;
+}

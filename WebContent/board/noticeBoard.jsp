@@ -16,6 +16,15 @@
 	<link href="${conPath }/css/board.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
+	<style>
+		table {
+			margin-top: 35px;
+			width: 85%;
+		}
+		th {
+		width: 20%;
+		}
+	</style>
 </head>
 
 <body>
@@ -61,6 +70,11 @@
             </div>
         </div>
         <div id="content2">
+        	<table>
+        		<tr>
+        			<th>번호</th><th>작성자</th><th>제목</th><th>날짜</th>
+        		</tr>
+        	</table>
         </div>
     </section>
 	

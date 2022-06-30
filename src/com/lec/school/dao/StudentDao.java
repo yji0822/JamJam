@@ -310,4 +310,36 @@ public class StudentDao {
 		}
 		return result;
 	}
+	
+	
+	public int emailConfirm(String sEmail) {
+		int result = EXISTENT;
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+		String sql = "SELECT * FROM STUDENT WHERE SEMAIL = ?";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, sEmail);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = EXISTENT;
+			}else {
+				result = NONEXISTENT;
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}finally {
+			try {
+				if(rs    != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn  != null) conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return result;
+	}
+	
 }

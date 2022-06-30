@@ -47,6 +47,13 @@ section {
                 height: 87px;
                 line-height: 87px;
             }
+            
+            #content1 .content1 .logo {
+                width: 70px;
+                height: 55px;
+                margin-top: 15px;
+            }
+            
             #content1 #lnb {
                 clear: both;
                 width: 80%;

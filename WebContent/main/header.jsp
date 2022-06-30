@@ -64,8 +64,8 @@
         <div id="header3">
             <ul>
                 <li><a href="${conPath }/logout.do">로그아웃</a></li>
-                <li><a href="#">정보수정</a></li>
                 <li><a>${admin.aName } &nbsp; ▶</a></li>
+                <li><a href="#">환영합니다!</a></li>
             </ul>
         </div>
 	</c:if>

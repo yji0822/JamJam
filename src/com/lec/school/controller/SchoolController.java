@@ -10,9 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lec.school.service.ALoginService;
+import com.lec.school.service.SJoinService;
 import com.lec.school.service.SLoginService;
 import com.lec.school.service.SLogoutService;
+import com.lec.school.service.SemailConfirmService;
 import com.lec.school.service.Service;
+import com.lec.school.service.SidConfirmService;
 
 @WebServlet("*.do")
 public class SchoolController extends HttpServlet {
@@ -48,6 +51,18 @@ public class SchoolController extends HttpServlet {
 			viewPage = "main/main.jsp";
 		} else if (com.equals("/joinView.do")) {
 			viewPage = "student/join.jsp";
+		}else if(com.equals("/idConfirm.do")) {
+			service = new SidConfirmService();
+			service.execute(request, response);
+			viewPage = "member/idConfirm.jsp";
+		}else if(com.equals("/emailConfirm.do")) {
+			service = new SemailConfirmService();
+			service.execute(request, response);
+			viewPage = "member/emailConfirm.jsp";
+		}else if(com.equals("/join.do")) { // 회원가입 DB 처리
+			service = new SJoinService(); // execute메소드 : mId중복체크 후 회원가입
+			service.execute(request, response);
+			viewPage = "loginView.do";
 			
 			/**** admin *****/
 		} else if(com.equals("/adminLoginView.do")) {
