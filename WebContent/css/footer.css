@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+* {
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            font-family: 'NanumSquareLight';
+            font-family: 'NanumSquare';
+            font-family: 'NanumSquareBold';
+            font-family: 'NanumSquareExtraBold';
+            font-family: 'NanumSquareAcb';
+            font-family: 'NanumSquareAceb';
+            font-family: 'NanumSquareAcl';
+            font-family: 'NanumSquareAcr';
+        }
+
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+/**************  footer **************/
+        footer {
+            width: 100%;
+            min-width: 1500px;
+            /* border: 1px solid black; */
+            box-sizing: border-box;
+            text-align: center;
+            height: 45px;
+            line-height: 45px;
+            overflow: hidden;
+        }
+
+        #footer1, #footer2, #footer3 {
+            width: 33.33%;
+            box-sizing: border-box;
+            float: left;
+            background-color: #000560;
+            color: whitesmoke;
+        }
+
+            #footer1 .logo {
+                width: 100px;
+                height: 50px;
+            }
+            
+            
+            

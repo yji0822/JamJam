@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+* {
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            font-family: 'NanumSquareLight';
+            font-family: 'NanumSquare';
+            font-family: 'NanumSquareBold';
+            font-family: 'NanumSquareExtraBold';
+            font-family: 'NanumSquareAcb';
+            font-family: 'NanumSquareAceb';
+            font-family: 'NanumSquareAcl';
+            font-family: 'NanumSquareAcr';
+        }
+
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+section {
+            width: 1500px;
+            height: 870px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #content1, #content2, #content3 {
+            box-sizing: border-box;
+            /* border: 1px solid red; */
+        }
+
+        #content1 {
+            height: 20%;
+            line-height: 245px;
+        }
+            #content1 .content1 {
+                /* border: 1px solid red; */
+                box-sizing: border-box;
+                width: 100%;
+                height: 87px;
+                line-height: 87px;
+            }
+            #content1 #lnb {
+                clear: both;
+                width: 80%;
+            }
+
+                #content1 #lnb ul {
+                    overflow: hidden;
+                }
+
+                    #content1 #lnb ul li {
+                        float: left;
+                        width: 25%;
+                        height: 85px;
+                        line-height: 85px;
+                        font-size: 1.2em;
+                        background-color: whitesmoke;
+                        border-radius: 7px 7px 0 0;
+                        border-top: 1px solid #000560;
+                        border-right: 1px solid #000560;
+                        border-left: 1px solid #000560;
+                        box-sizing: border-box;
+                    }
+
+                #content1 #lnb a {
+                    text-align: center;
+                }
+
+                #content1 #lnb ul li:hover {
+                    background-color: whitesmoke;
+                    font-size: 1.5em;
+                }
+
+                #content1 #lnb ul li:active {
+                    font-size: 2em;
+                }
+
+        #content2 {
+            height: 55%;
+        }
+
+            #content2 #photo {
+                margin-top: 10px;
+                width: 65%;
+                height: 450px;
+                <!--border: 2px solid black;-->
+            }
+
+        #content3 {
+            height: 25%;
+        }
+
+            #content3 .goal1 {
+                line-height: 55px;
+                font-weight: bold;
+                font-size: 2em;
+            }
+
+            #content3 .goal2 {
+                line-height: 40px;
+                font-size: 1.4em;
+            }

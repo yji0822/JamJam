@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+* {
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            font-family: 'NanumSquareLight';
+            font-family: 'NanumSquare';
+            font-family: 'NanumSquareBold';
+            font-family: 'NanumSquareExtraBold';
+            font-family: 'NanumSquareAcb';
+            font-family: 'NanumSquareAceb';
+            font-family: 'NanumSquareAcl';
+            font-family: 'NanumSquareAcr';
+        }
+
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+/**************  header **************/
+        header {
+            /* border: 1px solid black; */
+            box-sizing: border-box;
+            width: 100%;
+            min-width: 1500px;
+            height: 40px;
+            overflow: hidden;
+            background-color: #000560; /* 남색*/
+            color: whitesmoke;
+        }
+
+        #header1, #header2, #header3 {
+            float: left;
+            width: 33.33%;
+            height: 100%;
+            line-height: 40px;
+            /* border: 1px solid red; */
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #header3 {
+        }
+
+            #header3 ul {
+                overflow: hidden;
+            }
+
+                #header3 ul li {
+                    width: 20%;
+                    float: right;
+                }
+
+                    #header3 ul li a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                    
+                    
+                    
