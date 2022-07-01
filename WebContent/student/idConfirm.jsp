@@ -6,11 +6,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
 </head>
 
 <body>
 	
-	<jsp:forward page="main.do"/>
+	${idConfirmResult }
 	
 </body>
 </html>

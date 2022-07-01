@@ -38,7 +38,7 @@ public class LunchBoardDao {
 		int result = FAIL;
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO LUNCH (NO, LDATE, AMPM, MENU, CALORIE, PHOTO, day) "  + 
+		String sql = "INSERT INTO LUNCH (LNO, LDATE, AMPM, MENU, CALORIE, PHOTO, day) "  + 
 				"    VALUES (LUNCH_SEQ.NEXTVAL, ?, ?, ?, ?, ?, " + 
 				"    to_char(to_date(?),'dd'))";
 		try {
@@ -76,14 +76,14 @@ public class LunchBoardDao {
 			pstmt.setString(2, month);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				int no = rs.getInt("no");
+				int lNo = rs.getInt("lno");
 				Date ldate = rs.getDate("ldate");
 				String ampm = rs.getString("ampm");
 				String menu = rs.getString("menu");
 				double calorie = rs.getDouble("calorie");
 				String photo = rs.getString("photo");
 				int  day = rs.getInt("day");
-				dtos.add(new LunchBoardDto(no, ldate, ampm, menu, calorie, photo, day));
+				dtos.add(new LunchBoardDto(lNo, ldate, ampm, menu, calorie, photo, day));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -112,7 +112,7 @@ public class LunchBoardDao {
 			pstmt.setString(4, ampm);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				int no = rs.getInt("no");
+				int lNo = rs.getInt("lNo");
 				Date ldate = rs.getDate("ldate");
 				//String ampm = rs.getString("ampm");
 				String menu = rs.getString("menu");

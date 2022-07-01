@@ -62,10 +62,10 @@
             </div>
             <div id="lnb">
                 <ul>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="#">오늘의 급식</a></li>
-                    <li><a href="#">자유게시판</a></li>
-                    <li><a href="#">반친구들</a></li>
+                    <li><a href="${conPath }/notice.do">공지사항</a></li>
+                    <li><a href="${conPath }/lunch.do">오늘의 급식</a></li>
+                    <li><a href="${conPath }/free.do">자유게시판</a></li>
+                    <li><a href="${conPath }/sAllView.do">반친구들</a></li>
                 </ul>
             </div>
         </div>

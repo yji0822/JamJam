@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class LunchBoardDto {
 	
-	private int no;
+	private int lNo;
 	private Date ldate;
 	private String ampm;
 	private String menu;
@@ -21,9 +21,10 @@ public class LunchBoardDto {
 		this.calorie = calorie;
 		this.photo = photo;
 	}
-	// 출력용
-	public LunchBoardDto(int no, Date ldate, String ampm, String menu, double calorie, String photo, int day) {
-		this.no = no;
+	
+	public LunchBoardDto(int lNo, Date ldate, String ampm, String menu, double calorie, String photo, int day) {
+		super();
+		this.lNo = lNo;
 		this.ldate = ldate;
 		this.ampm = ampm;
 		this.menu = menu;
@@ -37,11 +38,12 @@ public class LunchBoardDto {
 	public void setDay(int day) {
 		this.day = day;
 	}
-	public int getNo() {
-		return no;
+	
+	public int getlNo() {
+		return lNo;
 	}
-	public void setNo(int no) {
-		this.no = no;
+	public void setlNo(int lNo) {
+		this.lNo = lNo;
 	}
 	public Date getLdate() {
 		return ldate;
@@ -75,9 +77,10 @@ public class LunchBoardDto {
 	}
 	@Override
 	public String toString() {
-		return "LunchDto [no=" + no + ", ldate=" + ldate + ", ampm=" + ampm + ", menu=" + menu + ", calorie=" + calorie
-				+ ", photo=" + photo + ", day=" + day + "]";
+		return "LunchBoardDto [lNo=" + lNo + ", ldate=" + ldate + ", ampm=" + ampm + ", menu=" + menu + ", calorie="
+				+ calorie + ", photo=" + photo + ", day=" + day + "]";
 	}
+	
 	
 	
 }

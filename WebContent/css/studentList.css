@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/**************  section **************/
 section {
 	width: 1500px;
 	height: 870px;
@@ -10,11 +11,12 @@ section {
 
 #content1, #content2, #content3 {
 	box-sizing: border-box;
-	/* border: 1px solid red; */
+	border: 1px solid red;
 }
 
 #content1 {
 	height: 20%;
+	margin-top: 10px;
 }
 
 #content1 .content1 {
@@ -54,7 +56,8 @@ section {
 	box-sizing: border-box;
 }
 
-#content1 #lnb ul li:first-child {
+/* 추가 */
+#content1 #lnb ul li:last-child {
 	background-color: whitesmoke;
 	font-size: 1.5em;
 }
@@ -73,8 +76,32 @@ section {
 }
 
 #content2 {
-	height: 80%;
+	height: 70%;
 	background-color: whitesmoke;
 	border: 1px solid lightgray;
 	border-radius: 5px 5px 0 0;
+}
+
+#content2 table {
+	border: 2px solid green;
+	box-sizing: border-box;
+	margin-top: 35px;
+	width: 95%;
+	height: 90%;
+}
+
+#content2 td {
+	width: 25%;
+	border: 1px solid red;
+	box-sizing: border-box;
+}
+#sname {
+	font-size: 1.2em;
+}
+
+/* content3 추가 */
+#content3 {
+	height: 10%;
+	line-height: 60px;
+	background-color: whitesmoke;
 }

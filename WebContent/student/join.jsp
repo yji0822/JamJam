@@ -6,7 +6,6 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
 	<link href="${conPath }/css/join.css" rel="stylesheet" type="text/css" />
 	<link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
@@ -16,7 +15,7 @@
 <script>
 	$(document).ready(function(){
 		$('input[name="sId"]').keyup(function(){
-			var mId = $('input[name="sId"]').val();
+			var sId = $('input[name="sId"]').val();
 			$.ajax({
 				url : '${conPath}/idConfirm.do',
 				type : 'get',
@@ -60,7 +59,7 @@
 			var pwChkResult     = $('#pwChkResult').text().trim();
 			var emailConfirmResult = $('#emailConfirmResult').text().trim();
 			if(idConfirmResult!='사용 가능한 ID'){
-				alert('사용가능한 ID로 가입하세요');
+				alert('중복된 아이디 입니다.');
 				$('input[name="sId"]').focus();
 				return false;
 			}else if(pwChkResult !='비밀번호 일치'){
@@ -89,10 +88,8 @@
         <div id="content1">
         </div>
         <div id="content2">
-            <form class="join" action="${conPath }/join.do" method="post" enctype="multipart/form-data">
-                <!-- INSERT INTO STUDENT (SID, SPW, SNAME, SNO, STEL, SEMAIL, SGENDER, SBIRTH, SPHOTO)
-    VALUES ('FFF', '1', '유재석', 16, '010-1234-5678',  'YYY@NAVER.COM', 'M', TO_DATE('2009-08-06', 'YYYY-MM-DD'), '15.JPG');-->
-                
+            <form action="${conPath }/join.do" method="post" enctype="multipart/form-data" class="join" >
+               
                 <table class="join_table">
                     <caption>나는야 회원가입창!</caption>
 
@@ -119,7 +116,7 @@
                     </tr>
                     <tr>
                         <th>출석번호</th>
-                        <td><input type="number" nmae="sNo" required="required" min="1" max="100"/></td>
+                        <td><input type="number" name="sNo" required="required" min="1" max="100"/></td>
                     </tr>
                     <tr>
                         <th>핸드폰번호</th>

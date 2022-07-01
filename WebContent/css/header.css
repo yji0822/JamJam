@@ -28,7 +28,7 @@
             box-sizing: border-box;
             width: 100%;
             min-width: 1500px;
-            height: 40px;
+            height: 60px;
             overflow: hidden;
             background-color: #000560; /* 남색*/
             color: whitesmoke;
@@ -38,7 +38,7 @@
             float: left;
             width: 33.33%;
             height: 100%;
-            line-height: 40px;
+            line-height: 60px;
             /* border: 1px solid red; */
             box-sizing: border-box;
             text-align: center;

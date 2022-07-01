@@ -237,18 +237,26 @@ public class StudentDao {
 			rs = pstmt.executeQuery();
 		
 			while(rs.next()) {
-				 String sId;
-				 String sPw;
-				 String sName;
-				 int    sNo;
-				 String sTel;
-				 String sEmail;
-				 String sGender;
-				 Date   sBirth;
-				 String sPhoto;
+				 String sId = rs.getString("sId");
+				 System.out.println("1 sid");
+
+				 String sName = rs.getString("sName");
+				 System.out.println("2, sname" + sName + "error");
+				 int    sNo = rs.getInt("sNo");
+				 System.out.println("2. sNo error");
+				 String sTel = rs.getString("sTel");
+				 System.out.println("3 sTel error" + sTel);
+				 String sEmail = rs.getString("sEmail");
+				 String sGender = rs.getString("sGender");
+				 Date   sBirth = rs.getDate("sBirth");
+				 String sPhoto = rs.getString("sPhoto");
+				 System.out.println("4 sPhoto");
+				 
+				 students.add(new StudentDto(sId, null, sName, sNo, sTel, sEmail, sGender, sBirth, sPhoto, 0));
+				 System.out.println("add dto");
 			}
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage() + "dao error");
 		}finally {
 			try {
 				if(rs    != null) rs.close();
@@ -256,6 +264,7 @@ public class StudentDao {
 				if(conn  != null) conn.close();
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
+				 
 			}
 		}
 		return students;

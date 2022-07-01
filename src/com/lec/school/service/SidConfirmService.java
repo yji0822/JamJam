@@ -14,7 +14,6 @@ public class SidConfirmService implements Service {
 		// ID 중복체크
 		int result = sDao.sIdConfirm(sId);
 		if(result == StudentDao.NONEXISTENT) {
-			
 			request.setAttribute("idConfirmResult", "사용 가능한 ID");
 		}else {
 			request.setAttribute("idConfirmResult", "<b>중복된 ID</b>");

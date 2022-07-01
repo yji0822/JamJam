@@ -23,8 +23,8 @@ public class SJoinService implements Service {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		String path = request.getRealPath("studentPhotoUp");
-		int maxSize = 1024*1024; // 사진 업로드 제한 용량 : 1M
+		String path = request.getRealPath("fileUp");
+		int maxSize = 1024*1024*3; // 사진 업로드 제한 용량 : 1M
 		String sPhoto = ""; // 첨부된 파일이 저장된 파일 이름
 		try {
 			// mRequest 객체 생성 후 mPhoto 파일이름 얻어옴
@@ -37,17 +37,26 @@ public class SJoinService implements Service {
 			//}
 			// mRequest을 이용하여 파라미터 받아와서 DB 저장
 			String sId = mRequest.getParameter("sId");
+			System.out.println("sid");
 			String sPw = mRequest.getParameter("sPw");
+			System.out.println("spw");
 			String sName = mRequest.getParameter("sName");
+			System.out.println(sName);
 			int sNo = Integer.parseInt(mRequest.getParameter("sNo"));
+			System.out.println("sno");
 			String sTel = mRequest.getParameter("sTel");
+			System.out.println("stel");
 			String sEmail = mRequest.getParameter("sEmail");
+			System.out.println("semail");
 			String sGender = mRequest.getParameter("sGender");
+			System.out.println("sgender");
 			sPhoto = sPhoto == null ? "NOIMG.JPG" : sPhoto;
 			String sBirthStr = mRequest.getParameter("sBirth");
 			Date sBirth = null;
 			if(!sBirthStr.equals("")) {
 				sBirth = Date.valueOf(sBirthStr);
+			} else {
+				System.out.println("3");
 			}
 			
 			StudentDao sDao = StudentDao.getInstance();
