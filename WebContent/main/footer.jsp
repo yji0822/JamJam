@@ -17,13 +17,13 @@
             <a href="#"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
         </div>
         <div id="footer2">	
-            	<a href="https://yongsan.sen.hs.kr/116179/subMenu.do">용산고등학교 홈페이지</a>
-        </div>
-        <div id="footer3">
-             <div id ="address">
+            	<div id ="address">
                 [04353] 서울특별시 용산구 두텁바위로 60 (용산동2가, 용산고등학교)<br />
                 TEL 02-3706-6700 | FAX 02-318-4439
             </div>
+        </div>
+        <div id="footer3">
+             <a href="https://yongsan.sen.hs.kr/116179/subMenu.do">용산고등학교 홈페이지 바로가기</a>
         </div>
     </footer>
 	

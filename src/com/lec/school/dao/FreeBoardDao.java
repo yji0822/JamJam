@@ -55,6 +55,7 @@ public class FreeBoardDao {
 			while(rs.next()) {
 				 int fNo  = rs.getInt("fNo");
 				 String sId = rs.getString("sId");
+				 String sName = rs.getString("sName");
 				 String fTitle = rs.getString("fTitle");
 				 String fContent = rs.getString("fContent");
 				 String fFilename = rs.getString("fFilename");
@@ -65,8 +66,7 @@ public class FreeBoardDao {
 				 int fIndent = rs.getInt("fIndent");
 				 String fIp = rs.getString("fIp");
 				 
-				 dtos.add(new FreeBoardDto(fNo, sId, fTitle, fContent, 
-						 		fFilename, fRdate, fHit, fRef, fStep, fIndent, fIp));
+				 dtos.add(new FreeBoardDto(fNo, sId, sName, fTitle, fContent, fFilename, fRdate, fHit, fRef, fStep, fIndent, fIp));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

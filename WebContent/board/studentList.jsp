@@ -31,7 +31,7 @@
 	<section>
         <div id="content1">
             <div class="content1">
-                <a href="#"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+                <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
             </div>
             <div id="lnb">
                 <ul>

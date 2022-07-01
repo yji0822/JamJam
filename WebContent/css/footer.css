@@ -34,7 +34,7 @@ footer {
 	line-height: 90px;
 	overflow: hidden;
 	font-weight: bold;
-	margin-top: 30px;
+	margin-top: 35px;
 }
 
 #footer1, #footer2, #footer3 {
@@ -50,7 +50,7 @@ footer {
 	margin-top: 13px;
 }
 
-#footer3 #address {
+#footer2 #address {
 	margin-top: 20px;
 	line-height: 25px;
 }

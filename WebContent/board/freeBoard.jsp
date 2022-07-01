@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link href="${conPath }/css/studentList.css" rel="stylesheet" type="text/css" />
+	<link href="${conPath }/css/freeBoard.css" rel="stylesheet" type="text/css" />
 	<link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
@@ -18,30 +18,13 @@
 			$('tr').click(function(){
 				var fNo = Number($(this).children().eq(0).text()); // 0번째 td안의 있는 text;
 				//alert(fId);
-				if(!isNaN(fId)){
+				if(!isNaN(fNo)){
 					location.href = '${conPath}/free.do?fNo='+fNo+'&pageNum=${pageNum}';
 				}
 			});
 		});
 	</script>
 	
-	<style>
-		th{
-		width:5%;
-		border-bottom: 1px dashed black;
-		height: 10%;
-		}
-		
-		
-		th:nth-child(3){
-		width:40%;
-		}
-		.left {
-		padding-left: 15px;
-		text-align:left;
-		}
-		
-	</style>
 </head>
 
 <body>
@@ -70,27 +53,28 @@
         <div id="content2">
         	<table>
         		<tr>
-        			<th>번호</th><th>작성자</th><th>제목</th><th>날짜</th>
+        			<th>번호</th><th>제목</th><th>작성자</th><th>날짜</th>
         		</tr>
         		<c:if test="${totCnt==0 }">
 			<tr><td colspan="6">등록된 글이 없습니다</td></tr>
 		</c:if>
 		<c:if test="${totCnt!=0 }">
 			<c:forEach items="${boardList }" var="board">
-				<tr><td>${board.fNo }</td>
-						<td>${board.sName }</td>
-						<td class="left">
-							<c:forEach var="i" begin="1" end="${board.fIndent }">
-								<c:if test="${i==board.fIndent }">└─</c:if>
-								<c:if test="${i!=board.fIndent }"> &nbsp; &nbsp; </c:if>
-							</c:forEach>
-							${board.fTitle } <!-- 글제목에 a태그를 걸지 말고 query로 tr을 클릭하면 상세보기 페이지로 가기 -->
-							<c:if test="${not empty board.fFilename }">
-								<img src="https://cdn-icons-png.flaticon.com/512/5088/5088374.png" width="10">
-							</c:if>
-						</td>
+				<tr>
+					<td>${board.fNo }</td>
+					<td class="left">
+						<c:forEach var="i" begin="1" end="${board.fIndent }">
+							<c:if test="${i==board.fIndent }">└─</c:if>
+							<c:if test="${i!=board.fIndent }"> &nbsp; &nbsp; </c:if>
+						</c:forEach>
+						${board.fTitle } <!-- 글제목에 a태그를 걸지 말고 query로 tr을 클릭하면 상세보기 페이지로 가기 -->
+						<c:if test="${not empty board.fFilename }">
+							<img src="https://cdn-icons-png.flaticon.com/512/5088/5088374.png" width="10">
+						</c:if>
+					</td>
+					<td>${board.sName }</td>
 						<%-- <td>${board.fHit }</td> --%>
-						<td><fmt:formatDate value="${board.fRdate }" type="date" dateStyle="short"/></td>
+					<td><fmt:formatDate value="${board.fRdate }" type="date" dateStyle="short"/></td>
 						<%-- <td>${board.fIp }</td> --%>
 				</tr>
 			</c:forEach>

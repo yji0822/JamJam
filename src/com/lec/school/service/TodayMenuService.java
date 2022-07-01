@@ -14,7 +14,7 @@ public class TodayMenuService implements Service {
 		String month = request.getParameter("month");
 		String day =  request.getParameter("day");
 		String ampm = request.getParameter("ampm");
-		request.setAttribute("dto", lunchDao.todayMenu(year, month, day, ampm));
+		request.setAttribute("lunch", lunchDao.todayMenu(year, month, day, ampm));
 	}
 
 }

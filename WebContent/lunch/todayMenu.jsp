@@ -19,20 +19,32 @@
 
 <body>
 	
-	<h4>급식열람 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <button>X</button></h4>
+	<h4>오늘의 급식 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <button>X</button></h4>
 	<hr>
 	<table>
-		<tr><th>급식</th><td>${dto.ampm }</td></tr>
-		<tr><th>배식일</th><td>${dto.ldate }</td></tr>
-		<tr><th>메뉴</th><td>${dto.menu }</td></tr>
-		<tr><th>칼로리</th><td>${dto.calorie }</td></tr>
+		<tr>
+			<th>급식</th>
+			<td>${lunch.ampm }</td>
+		</tr>
+		<tr>
+			<th>배식일</th>
+			<td>${lunch.ldate }</td>
+		</tr>
+		<tr>
+			<th>메뉴</th>
+			<td>${lunch.menu }</td>
+		</tr>
+		<tr>
+			<th>칼로리</th>
+			<td>${lunch.calorie }</td>
+		</tr>
 		<tr>
 			<th>식단이미지</th>
 			<td>
-				<c:if test="${empty dto.photo }">
+				<c:if test="${empty lunch.photo }">
 					<img src="${conPath }/img/noimg.png">
 				</c:if>
-				<c:if test="${not empty dto.photo }">
+				<c:if test="${not empty lunch.photo }">
 					<img src="${conPath }/lunchPic/${dto.photo}">
 				</c:if>
 			</td>
