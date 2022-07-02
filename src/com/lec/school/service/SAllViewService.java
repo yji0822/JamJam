@@ -15,12 +15,10 @@ public class SAllViewService implements Service {
 		
 		// pageNum받고, startRow, endRow 계산해서
 		String pageNum = request.getParameter("pageNum");
-		System.out.println("1");
 		if(pageNum == null) {
 			pageNum = "1";
 		}
 		int currentPage = Integer.parseInt(pageNum);
-		System.out.println("2");
 		final int PAGESIZE = 3, BLOCKSIZE=5;
 		
 		int startRow = (currentPage-1)*PAGESIZE +1;
@@ -28,11 +26,8 @@ public class SAllViewService implements Service {
 		
 		// dao의 list(startRow, endRow) 실행결과를 request.setAttribute
 		StudentDao sDao = StudentDao.getInstance();
-		System.out.println("2getinstance");
 		ArrayList<StudentDto> students = sDao.allList(startRow, endRow);
-		System.out.println("dao all list");
 		request.setAttribute("sAllView", students);
-		System.out.println("setattribute");
 		
 		// totCnt, pageCnt, startPage, endPage, BLOCKSIZE, pageNum
 		//    => request.setAttribute
@@ -44,13 +39,9 @@ public class SAllViewService implements Service {
 			endPage = pageCnt;
 		}
 		request.setAttribute("pageCnt", pageCnt);
-		System.out.println("pageCnt print" + pageCnt);
 		request.setAttribute("startPage", startPage);
-		System.out.println("startPage" + startPage);
 		request.setAttribute("endPage", endPage);
-		System.out.println("endPage" + endPage);
 		request.setAttribute("BLOCKSIZE", BLOCKSIZE);
-		System.out.println("blockSize" + BLOCKSIZE);
 		request.setAttribute("pageNum", currentPage);
 	}
 

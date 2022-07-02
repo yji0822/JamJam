@@ -37,19 +37,12 @@ public class SJoinService implements Service {
 			//}
 			// mRequest을 이용하여 파라미터 받아와서 DB 저장
 			String sId = mRequest.getParameter("sId");
-			System.out.println("sid");
 			String sPw = mRequest.getParameter("sPw");
-			System.out.println("spw");
 			String sName = mRequest.getParameter("sName");
-			System.out.println(sName);
 			int sNo = Integer.parseInt(mRequest.getParameter("sNo"));
-			System.out.println("sno");
 			String sTel = mRequest.getParameter("sTel");
-			System.out.println("stel");
 			String sEmail = mRequest.getParameter("sEmail");
-			System.out.println("semail");
 			String sGender = mRequest.getParameter("sGender");
-			System.out.println("sgender");
 			sPhoto = sPhoto == null ? "NOIMG.JPG" : sPhoto;
 			String sBirthStr = mRequest.getParameter("sBirth");
 			Date sBirth = null;

@@ -15,7 +15,6 @@ public class NoticeBoardDto {
 	
 	// 일반 입력 및 수정용
 	public NoticeBoardDto(int nNo, String aId, String nTitle, String nContent, Date nRdate, int nHit) {
-		super();
 		this.nNo = nNo;
 		this.aId = aId;
 		this.nTitle = nTitle;
@@ -26,7 +25,6 @@ public class NoticeBoardDto {
 	
 	// 관리자 이름 들어간 리스트 출력용
 	public NoticeBoardDto(int nNo, String aId, String aName, String nTitle, String nContent, Date nRdate, int nHit) {
-		super();
 		this.nNo = nNo;
 		this.aId = aId;
 		this.aName = aName;

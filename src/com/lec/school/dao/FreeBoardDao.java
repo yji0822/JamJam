@@ -157,9 +157,9 @@ public class FreeBoardDao {
 		}
 	}
 	// (5) bId로 글 dto보기 : 글 상세보기(조회수 up + bid로 dto리턴)
-	public FreeBoardDto contentView(int fId) {
+	public FreeBoardDto contentView(int fNo) {
 		
-		hitUp(fId); 
+		hitUp(fNo); 
 		FreeBoardDto dto = null;
 		
 		Connection        conn  = null;
@@ -170,23 +170,29 @@ public class FreeBoardDao {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, fId);
+			pstmt.setInt(1, fNo);
+			System.out.println("fNo Dao");
 
 			rs = pstmt.executeQuery();
+			System.out.println("rs.next 시잣");
 			if(rs.next()) {
 				String sId   = rs.getString("sId");
+				System.out.println("sId");
 				String sName = rs.getString("sName"); // join해서 출력
+				System.out.println("sname" + sName);
 				String fTitle= rs.getString("fTitle");
 				String fContent= rs.getString("fContent");
-				String fFileName= rs.getString("fFileName");
+				String fFilename= rs.getString("fFilename");
 				Date   fRdate   = rs.getDate("fRdate");
+				System.out.println(fRdate + "fRdate");
 				int    fHit    = rs.getInt("fHit");
-				int    fGroup  = rs.getInt("fGroup");
+				int    fRef  = rs.getInt("fRef");
 				int    fStep   = rs.getInt("fStep");
 				int    fIndent = rs.getInt("fIndent");
 				String fIp     = rs.getString("fIp");
-				dto = new FreeBoardDto(fId, sId, sName, fTitle, fContent, fFileName, 
-						fRdate, fHit, fGroup, fStep, fIndent, fIp);
+				
+				dto = new FreeBoardDto(fNo, sId, sName, fTitle, fContent, fFilename, fRdate, fHit, fRef, fStep, fIndent, fIp);
+				System.out.println(dto + "출력 성겅?");
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -195,7 +201,9 @@ public class FreeBoardDao {
 				if(rs   !=null) rs.close();
 				if(pstmt!=null) pstmt.close();
 				if(conn !=null) conn.close();
-			} catch (SQLException e) {System.out.println(e.getMessage());}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage() + "dao 오류");
+			}
 		}
 		return dto;
 	}

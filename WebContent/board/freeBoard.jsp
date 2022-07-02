@@ -19,7 +19,7 @@
 				var fNo = Number($(this).children().eq(0).text()); // 0번째 td안의 있는 text;
 				//alert(fId);
 				if(!isNaN(fNo)){
-					location.href = '${conPath}/free.do?fNo='+fNo+'&pageNum=${pageNum}';
+					location.href = '${conPath}/freeContent.do?fNo='+fNo+'&pageNum=${pageNum}';
 				}
 			});
 		});

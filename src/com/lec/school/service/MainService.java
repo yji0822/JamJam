@@ -31,13 +31,10 @@ public class MainService implements Service {
 			monthParam = month<10 ? "0"+month : String.valueOf(month);
 		}
 		
-		System.out.println(year+"년" +month);
 		CalendarPrinter calPrint = new CalendarPrinter(year, month);
 		
 		LunchBoardDao lunchDao = LunchBoardDao.getInstance();
 		ArrayList<LunchBoardDto> dtos = lunchDao.selectMenu(yearParam, monthParam);
-		
-		System.out.println(dtos);
 		
 		request.setAttribute("dtos", dtos);
 		request.setAttribute("calPrint", calPrint);

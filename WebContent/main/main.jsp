@@ -20,6 +20,13 @@
 <link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
+	<style>
+		marquee{
+			font-size: 2em;
+			width: 800px;
+			margin-bottom: 20px;
+		}
+	</style>
 </head>
 
 <body>
@@ -38,16 +45,20 @@
 		
 		<c:if test="${empty student and empty admin}">
 			<div class="content1">
-				로그인 후 이용할 수 있습니다.
+				<a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+				<div id="lnb">
+             		<!-- <mark>모든 메뉴는 로그인 후 이용할 수 있습니다.</mark> -->
+             		<marquee direction=left width=300 height=70 scrolldelay="100" bgcolor="#b7d485">
+             		모든 메뉴는 로그인 후 이용할 수 있습니다.
+             		</marquee>
+            	</div>
 			</div>
 		</c:if>
+		
 		<c:if test="${not empty student or not empty admin}">
 			<div class="content1">
 				<a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
-			</div>
-		</c:if>
-            
-            <div id="lnb">
+				<div id="lnb">
                 <ul>
                     <li><a href="${conPath }/notice.do">공지사항</a></li>
                     <li><a href="${conPath }/lunch.do">오늘의 급식</a></li>
@@ -55,10 +66,14 @@
                     <li><a href="${conPath }/sAllView.do">반친구들</a></li>
                 </ul>
             </div>
+			</div>
+		</c:if>
         </div>
+        
 		<div id="content2">
 			<img src="${conPath }/img/picture.jpeg" id="photo" alt="photo" />
 		</div>
+		
 		<div id="content3">
 			<div class="goal1">
 				하기실음 관두등가<br /> 河己失音 官頭登可<br />

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.lec.school.dao.FreeBoardDao;
 import com.lec.school.dto.FreeBoardDto;
 
-public class BoardListService implements Service {
+public class FreeBoardListService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

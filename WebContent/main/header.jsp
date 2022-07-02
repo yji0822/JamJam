@@ -15,6 +15,12 @@
 	</script>
 	<link href="${conPath }/css/header.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+	<style>
+		.header1 {
+			color: white;
+			font-size: 1.3em;
+		}
+	</style>
 </head>
 
 <body>
@@ -24,7 +30,7 @@
 	
 	<c:if test="${empty student and empty admin}"> <%-- 로그인 전 화면 --%>
         <div id="header1">
-            header1
+            <a href="${conPath }/main.do" class="header1">메인으로 가기</a>
         </div>
         <div id="header2">
             header2
@@ -40,7 +46,7 @@
 	
 	<c:if test="${not empty student and empty admin}">
 	<div id="header1">
-            header1
+            <a href="${conPath }/main.do" class="header1">메인으로 가기</a>
         </div>
         <div id="header2">
             header2

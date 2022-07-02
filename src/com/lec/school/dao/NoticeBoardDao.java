@@ -62,14 +62,13 @@ public class NoticeBoardDao {
 			
 				while(rs.next()) {
 					 int nNo = rs.getInt("nNo");
-					 String aId = rs.getString("aId");
 					 String aName = rs.getString("aName");
 					 String nTitle = rs.getString("nTitle");
 					 String nContent = rs.getString("nContent");
 					 Date   nRdate = rs.getDate("nRdate");
 					 int    nHit = rs.getInt("nHit");
 					 
-					 dtos.add(new NoticeBoardDto(nNo, aId, aName, nTitle, nContent, nRdate, nHit));
+					 dtos.add(new NoticeBoardDto(nNo, null, aName, nTitle, nContent, nRdate, nHit));
 				}
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());
@@ -79,7 +78,7 @@ public class NoticeBoardDao {
 					if(pstmt!=null) pstmt.close();
 					if(conn !=null) conn.close();
 				} catch (SQLException e) {
-					System.out.println(e.getMessage());
+					System.out.println(e.getMessage() + "catch에서 빠져버림 ㅠ");
 					}
 			}
 			return dtos;
@@ -90,7 +89,7 @@ public class NoticeBoardDao {
 			Connection        conn  = null;
 			PreparedStatement pstmt = null;
 			ResultSet         rs    = null;
-			String sql = "SELECT COUNT(*) FROM NOTICE_BOARD;";
+			String sql = "SELECT COUNT(*) FROM NOTICE_BOARD";
 			try {
 				conn = getConnection();
 				pstmt = conn.prepareStatement(sql);
