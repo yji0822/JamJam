@@ -183,23 +183,24 @@ public class StudentDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "UPDATE STUDENT SET SPW = ?," + 
-				     "                   SNAME = ?," + 
-				     "                   STEL = ?," + 
-				     "                   SEMAIL = ?," + 
-				     "                   SGENDER = ?," + 
-				     "                   SBIRTH = ?," + 
-				     "                   SPHOTO = ?" + 
-			    	"                WHERE SID = ?";
+				"                   SNAME = ?," + 
+				"                   STEL = ?," + 
+				"                   SEMAIL = ?," + 
+				"                   SGENDER = ?," + 
+				"                   SBIRTH = TO_DATE(?, 'YYYY-MM-DD')," + 
+				"                   SPHOTO = ?" + 
+				"                WHERE SID = ?";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, student.getsPw());
 			pstmt.setString(2, student.getsName());
 			pstmt.setString(3, student.getsTel());
-			pstmt.setString(4, student.getsGender());
-			pstmt.setDate(5, student.getsBirth());
-			pstmt.setString(6, student.getsPhoto());
-			pstmt.setString(7, student.getsId());
+			pstmt.setString(4, student.getsEmail());
+			pstmt.setString(5, student.getsGender());
+			pstmt.setDate(6, student.getsBirth());
+			pstmt.setString(7, student.getsPhoto());
+			pstmt.setString(8, student.getsId());
 			
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -238,22 +239,16 @@ public class StudentDao {
 		
 			while(rs.next()) {
 				 String sId = rs.getString("sId");
-				 System.out.println("1 sid");
 
 				 String sName = rs.getString("sName");
-				 System.out.println("2, sname" + sName + "error");
 				 int    sNo = rs.getInt("sNo");
-				 System.out.println("2. sNo error");
 				 String sTel = rs.getString("sTel");
-				 System.out.println("3 sTel error" + sTel);
 				 String sEmail = rs.getString("sEmail");
 				 String sGender = rs.getString("sGender");
 				 Date   sBirth = rs.getDate("sBirth");
 				 String sPhoto = rs.getString("sPhoto");
-				 System.out.println("4 sPhoto");
 				 
 				 students.add(new StudentDto(sId, null, sName, sNo, sTel, sEmail, sGender, sBirth, sPhoto, 0));
-				 System.out.println("add dto");
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage() + "dao error");

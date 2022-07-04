@@ -30,7 +30,16 @@
 </head>
 
 <body>
-
+	
+	<c:if test="${not empty loginErrorMsg }">
+		<script>alert('${loginErrorMsg }');</script>
+	</c:if>
+	<c:if test="${not empty modifyResult }">
+		<script>
+			alert('${modifyResult}');
+		</script>
+	</c:if>
+	
 	<c:if test="${not empty withdrawalResult }">
 		<script>
 			alert('${withdrawalResult}');

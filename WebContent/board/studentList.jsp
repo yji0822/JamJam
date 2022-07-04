@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="conPath" value="${pageContext.request.contextPath }"/>    
 <!DOCTYPE html>
 <html>
@@ -48,10 +49,10 @@
                     <c:forEach var="dto" items="${sAllView }">
 				<td>
 					<p>${dto.sNo }번</p>
-					<img src="${conPath }/fileUp/${dto.sPhoto}" alt="${dto.sName }등록사진" width="100" height="350"><br>
+					<img src="${conPath }/fileUp/${dto.sPhoto}" alt="${dto.sName }_등록사진" width="100" height="350"><br>
 					<b id="sname">${dto.sName }</b> (${dto.sId })<br>
 					${dto.sTel }<br>
-					${dto.sBirth }
+					<fmt:formatDate value="${dto.sBirth }" pattern="yy-MM-dd"/>
 				</td>
 			</c:forEach>
                 </tr>

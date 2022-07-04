@@ -223,6 +223,7 @@ public class FreeBoardDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, fNo);
 			rs = pstmt.executeQuery();
+			
 			if(rs.next()) {
 				String sId   = rs.getString("sId");
 				String sName = rs.getString("sName"); 
@@ -231,12 +232,12 @@ public class FreeBoardDao {
 				String fFileName= rs.getString("fFileName");
 				Date   fRdate   = rs.getDate("fRdate");
 				int    fHit    = rs.getInt("fHit");
-				int    fGroup  = rs.getInt("fGroup");
+				int    fRef  = rs.getInt("fRef");
 				int    fStep   = rs.getInt("fStep");
 				int    fIndent = rs.getInt("fIndent");
 				String fIp     = rs.getString("fIp");
 				dto = new FreeBoardDto(fNo, sId, sName, fTitle, fContent, fFileName, 
-						fRdate, fHit, fGroup, fStep, fIndent, fIp);
+						fRdate, fHit, fRef, fStep, fIndent, fIp);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -245,7 +246,9 @@ public class FreeBoardDao {
 				if(rs   !=null) rs.close();
 				if(pstmt!=null) pstmt.close();
 				if(conn !=null) conn.close();
-			} catch (SQLException e) {System.out.println(e.getMessage());}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
 		}
 		return dto;
 	}
@@ -281,7 +284,9 @@ public class FreeBoardDao {
 			try {
 				if(pstmt!=null) pstmt.close();
 				if(conn !=null) conn.close();
-			} catch (SQLException e) {System.out.println(e.getMessage());}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				}
 		}
 		return result;
 	}
@@ -313,7 +318,9 @@ public class FreeBoardDao {
 			try {
 				if(pstmt!=null) pstmt.close();
 				if(conn !=null) conn.close();
-			} catch (SQLException e) {System.out.println(e.getMessage());}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				}
 		}
 		return result;
 	}
@@ -336,16 +343,17 @@ public class FreeBoardDao {
 			try {
 				if(pstmt!=null) pstmt.close();
 				if(conn !=null) conn.close();
-			} catch (SQLException e) {System.out.println(e.getMessage());}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				}
 		}
 	}
 	// (9) 답변글 쓰기
 	public int replyBoard(String sId, String fTitle, String fContent,
-			String fFileName, String fIp,
-			int fRef, int fStep, int fIndent) {
+			String fFilename, String fIp, int fRef, int fStep, int fIndent) {
 		preReplyStepA(fRef, fStep); // 답변글 저장전 step A 먼저 실행
-		// bgroup, bstep, bindent 원글정보
-		// bname, btitle, bcontent, bip 답변글 정보
+		// fref, fstep, findent 원글정보
+		// fname, ftitle, fcontent, fip 답변글 정보
 		int result = FAIL;
 		Connection        conn  = null;
 		PreparedStatement pstmt = null;
@@ -360,7 +368,7 @@ public class FreeBoardDao {
 			pstmt.setString(1, sId);
 			pstmt.setString(2, fTitle);
 			pstmt.setString(3, fContent);
-			pstmt.setString(4, fFileName);
+			pstmt.setString(4, fFilename);
 			pstmt.setInt(5, fRef);
 			pstmt.setInt(6, fStep + 1);
 			pstmt.setInt(7, fIndent + 1);
@@ -370,12 +378,14 @@ public class FreeBoardDao {
 			System.out.println(result==SUCCESS? "답변쓰기성공":"답변쓰기실패");
 		
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage() + "답변 쓰기 실패입니다.");
 		}finally {
 			try {
 				if(pstmt!=null) pstmt.close();
 				if(conn !=null) conn.close();
-			} catch (SQLException e) {System.out.println(e.getMessage());}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+				}
 		}
 		return result;
 	}

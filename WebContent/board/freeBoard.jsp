@@ -8,10 +8,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link href="${conPath }/css/freeBoard.css" rel="stylesheet" type="text/css" />
+	<link href="${conPath }/css/freeBoardContent.css" rel="stylesheet" type="text/css" />
 	<link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
+	
+	<style>
+		.write_btn {
+			width: 100px;
+			height: 
+		}
+		
+		#content2 table tr:hover {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+		#content2 table tr:first-child:hover{
+			font-weight: none;
+			font-size: 1em;
+		}
+	</style>
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -24,13 +41,25 @@
 			});
 		});
 	</script>
+	<style>
+	.file_img {
+		width: 20px;
+		height: 20px;
+		line-height: 50px;
+	}
+	
+	.btn {
+		width: 100px;
+		height: 40px;
+	}
+	</style>
 	
 </head>
 
 <body>
 	
-	<c:if test="${not empty boaredResult }">
-		<script>alert('${boaredResult}');</script>
+	<c:if test="${not empty fboaredResult }">
+		<script>alert('${fboaredResult}');</script>
 	</c:if>
 	
 	<jsp:include page="../main/header.jsp" />
@@ -52,14 +81,18 @@
         
         <div id="content2">
         	<table>
+        	<%-- <tr>
+        		<td></td><td></td><td></td><td></td>
+        		<td class="write_btn"><a href="${conPath }/freeWriteView.do" >글쓰기</a></td>
+        	</tr> --%>
         		<tr>
-        			<th>번호</th><th>제목</th><th>작성자</th><th>날짜</th>
+        			<th>번호</th><th>제목</th><th>작성자</th><th>조회수</th><th>날짜</th>
         		</tr>
         		<c:if test="${totCnt==0 }">
 			<tr><td colspan="6">등록된 글이 없습니다</td></tr>
 		</c:if>
 		<c:if test="${totCnt!=0 }">
-			<c:forEach items="${boardList }" var="board">
+			<c:forEach items="${fboardList }" var="board">
 				<tr>
 					<td>${board.fNo }</td>
 					<td class="left">
@@ -69,17 +102,22 @@
 						</c:forEach>
 						${board.fTitle } <!-- 글제목에 a태그를 걸지 말고 query로 tr을 클릭하면 상세보기 페이지로 가기 -->
 						<c:if test="${not empty board.fFilename }">
-							<img src="https://cdn-icons-png.flaticon.com/512/5088/5088374.png" width="10">
+							<img src="${conPath }/img/disk.png" width="10" class="file_img">
 						</c:if>
 					</td>
 					<td>${board.sName }</td>
-						<%-- <td>${board.fHit }</td> --%>
+					<td>${board.fHit }</td>
 					<td><fmt:formatDate value="${board.fRdate }" type="date" dateStyle="short"/></td>
-						<%-- <td>${board.fIp }</td> --%>
+						<%-- <td>${fboard.fIp }</td> --%>
 				</tr>
 			</c:forEach>
 		</c:if>
-        	</table>
+			<tr>
+				<td colspan="5"><b><a href="${conPath }/freeWriteView.do">글 쓰기</a></b></td> 
+				<%-- <td colspan="5"><input type="button" value="글쓰기" class="btn"
+				 	onclick="location='${conPath}/freeWriteView.do'"></td> --%>
+			</tr>
+        </table>
         </div>
         
         <div id="content3">
@@ -109,6 +147,9 @@
 		</c:if>
 		&nbsp; &nbsp; &nbsp;
 		<a href="${conPath }/free.do?pageNum=${pageCnt}">&gt;&gt;</a> 
+		
+			
+		
         </div>
         
     </section>

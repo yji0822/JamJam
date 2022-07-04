@@ -4,23 +4,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lec.school.dao.NoticeBoardDao;
-import com.lec.school.dto.NoticeBoardDto;
 
-public class NoticeContentService implements Service {
+public class NoticeBoardDeleteService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		// 공지사항 상세보기
 		
+		// 공지사항 글 삭제 로직
 		int nNo = Integer.parseInt(request.getParameter("nNo"));
-		System.out.println("nNo" + nNo);
 		
 		NoticeBoardDao nboardDao = NoticeBoardDao.getInstance();
-		NoticeBoardDto nboard = nboardDao.contentView(nNo);
-		System.out.println("contentView");
-
-		request.setAttribute("nboard", nboard);
-		System.out.println("setAttribute" + nboard);
+		int result = nboardDao.deleteBoard(nNo);
+		
+		if(result == NoticeBoardDao.SUCCESS) {
+			request.setAttribute("nboaredResult", "공지글 삭제 성공");
+		}else {
+			request.setAttribute("nboaredResult", "공지글 삭제 실패");
+		}
 
 	}
 

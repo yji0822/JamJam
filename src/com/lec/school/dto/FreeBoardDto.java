@@ -15,14 +15,11 @@ public class FreeBoardDto {
 	private int fStep;
 	private int fIndent;
 	private String fIp;
-	public FreeBoardDto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
+	public FreeBoardDto() {}
 	
 	public FreeBoardDto(int fNo, String sId, String fTitle, String fContent, String fFilename, Date fRdate, int fHit,
 			int fRef, int fStep, int fIndent, String fIp) {
-		super();
 		this.fNo = fNo;
 		this.sId = sId;
 		this.fTitle = fTitle;
@@ -38,7 +35,6 @@ public class FreeBoardDto {
 
 	public FreeBoardDto(int fNo, String sId, String sName, String fTitle, String fContent, String fFilename,
 			Date fRdate, int fHit, int fRef, int fStep, int fIndent, String fIp) {
-		super();
 		this.fNo = fNo;
 		this.sId = sId;
 		this.sName = sName;

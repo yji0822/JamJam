@@ -28,9 +28,20 @@
 			margin-top: 35px;
 			width: 85%;
 		}
+		
+		#content2 table tr:hover {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+		#content2 table tr:first-child:hover{
+			font-weight: none;
+			font-size: 1em;
+		}
+		
 		th {
 		width: 20%;
 		}
+		
 		td {
 			width: 100px;
 		}
@@ -38,7 +49,7 @@
 </head>
 
 <body>
-	<c:if test="${not empty adminLoginResult }">
+	<%-- <c:if test="${not empty adminLoginResult }">
 		<script>
 			alert('${adminLoginResult}');
 		</script>
@@ -54,15 +65,15 @@
 			alert('${loginErrorMsg}');
 			history.back();
 		</script>
-	</c:if>
+	</c:if> --%>
 	<c:if test="${not empty withdrawalResult }">
 		<script>
 			alert('${withdrawalResult}');
 		</script>
 	</c:if>
 	
-	<c:if test="${not empty boaredResult }">
-		<script>alert('${boaredResult}');</script>
+	<c:if test="${not empty nboaredResult }">
+		<script>alert('${nboaredResult}');</script>
 	</c:if>
 	
 	

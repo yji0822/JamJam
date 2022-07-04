@@ -248,12 +248,12 @@ public class NoticeBoardDao {
 			try {
 				conn = getConnection();
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(5, nNo);
+				pstmt.setInt(1, nNo);
 				
 				result = pstmt.executeUpdate();
-				System.out.println(result >= SUCCESS? "글삭제성공":"글삭제실패");
+				System.out.println(result == SUCCESS? "글삭제성공":"글삭제실패");
 			
-				result = result >= 1? SUCCESS : FAIL;
+				result = result==1 ? SUCCESS : FAIL;
 			
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());

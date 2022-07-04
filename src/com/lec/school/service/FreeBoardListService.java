@@ -28,7 +28,7 @@ public class FreeBoardListService implements Service {
 		
 		FreeBoardDao fboardDao  = FreeBoardDao.getInstance();
 		ArrayList<FreeBoardDto> fboardList = fboardDao.listBoard(startRow, endRow);
-		request.setAttribute("boardList", fboardList);
+		request.setAttribute("fboardList", fboardList);
 		
 		int totCnt = fboardDao.getBoardTotCnt(); // 글갯수
 		int pageCnt = (int)Math.ceil((double)totCnt/PAGESIZE);//페이지갯수

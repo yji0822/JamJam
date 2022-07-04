@@ -43,15 +43,12 @@ public class SJoinService implements Service {
 			String sTel = mRequest.getParameter("sTel");
 			String sEmail = mRequest.getParameter("sEmail");
 			String sGender = mRequest.getParameter("sGender");
-			sPhoto = sPhoto == null ? "NOIMG.JPG" : sPhoto;
+			sPhoto = sPhoto == null ? "noimg.jpg" : sPhoto;
 			String sBirthStr = mRequest.getParameter("sBirth");
 			Date sBirth = null;
 			if(!sBirthStr.equals("")) {
 				sBirth = Date.valueOf(sBirthStr);
-			} else {
-				System.out.println("3");
-			}
-			
+			} 
 			StudentDao sDao = StudentDao.getInstance();
 			StudentDto student = new StudentDto(sId, sPw, sName, sNo, sTel, sEmail, sGender, sBirth, sPhoto, 0);
 			// 회원가입
@@ -69,7 +66,7 @@ public class SJoinService implements Service {
 				
 		// 서버에 업로드된 파일을 소스 폴더로 복사
 		File serverFile = new File(path + "/" + sPhoto);
-		if(serverFile.exists() && !sPhoto.equals("NOIMG.JPG")) {
+		if(serverFile.exists() && !sPhoto.equals("noimg.jpg")) {
 			InputStream is = null;
 			OutputStream os = null;
 			try {

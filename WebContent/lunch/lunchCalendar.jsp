@@ -20,6 +20,7 @@
 				$('form').submit();
 			});
 		});
+		
 		function todayMenu(day, ampm){
 			month = '${month}';
 			if(month<10){

@@ -58,13 +58,14 @@
 				 
 				 <tr>
 				 	<td colspan="2">
-				 	<!-- 학생의 id이랑 fboard의 sid가 같으면 수정버튼 생성 -->
-				 		<c:if test="${admin.aId eq nboard.aId }">
+				 	<!-- 관리자 계정으로 들어온 경우에만 삭제 버튼 보이고 수정이 가능하도록 -->
+<%-- 				 		<c:if test="${admin.aId eq nboard.aId }">
 				 			<button onclick="location='${conPath}/noticeModifyView.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'">수정</button>
-				 		</c:if>
+				 		</c:if> --%>
 				 		<c:if test="${not empty admin}">
-				 				<button onclick="location='${conPath}/noticeDelete.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'">삭제</button>
-				 			</c:if>
+				 			<button onclick="location='${conPath}/noticeModifyView.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'">수정</button>
+			 				<button onclick="location='${conPath}/noticeDelete.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'">삭제</button>
+			 			</c:if>
 				
 				 			<input type="button" value="목록" class="btn"
 				 	onclick="location='${conPath}/notice.do?pageNum=${param.pageNum }'">			 

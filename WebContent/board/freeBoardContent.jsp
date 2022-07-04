@@ -12,7 +12,7 @@
 		
 		});
 	</script>
-	<link href="${conPath }/css/noticeBoard.css" rel="stylesheet" type="text/css" />
+	<link href="${conPath }/css/freeBoardContent.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
 	<style>
@@ -22,10 +22,31 @@
 		.subject {
 			width: 50px;
 		}
+		
+		img {
+		
+			height: 220px;
+			width: 200px;
+		}
+		button {
+			width: 100px;
+			height: 40px;
+		}
+		.btn {
+			width: 100px;
+			height: 40px;
+		}
 	</style>
 </head>
 
 <body>
+	
+	<c:if test="${not empty fboaredResult }">
+		<script>
+			alert('${fboaredResult }');
+		</script>
+	</c:if>
+	
 	
 	<jsp:include page="../main/header.jsp" />
 	
@@ -38,35 +59,39 @@
 	</div>
 	
 	<div id="content2">
-		<table>
+		<table>		
 				 <caption>${fboard.fNo }번 글 상세보기</caption>
 				 <tr>
 				 	<td class="subject">작성자</td>
-				 	<td>${fboard.sName}(${fboard.sId}) 친구</td>
+				 	<td>${fboard.sName} (${fboard.sId})</td>
+				 	<td class="subject">작성일</td>
+				 	<td>${fboard.fRdate}</td>
+				 </tr>
+				 <tr>
+				 	<td class="subject">글 조회수</td>
+				 	<td>${fboard.fHit }</td>
+				 	<td class="subject">아이피</td>
+				 	<td>${fboard.fIp }</td>
 				 </tr>
 				 <tr>
 				 	<td class="subject">제목</td>
-				 	<td>${fboard.fTitle }</td>
+				 	<td colspan="3">${fboard.fTitle }</td>
 				 </tr>
+				 
+		
 				 <tr>
-				 	<!-- <th>첨부파일</th> -->
-						 
-						 	<c:if test="${not empty fboard.fFilename }">
-						 		<td colspan="2"><a href="${conPath }/img/${fboard.fFilename}" target="_blank">${board.fFilename}</a></td>
-						 	</c:if>
-						 	<c:if test="${empty fboard.fFilename }">
-						 		<!-- <td colspan="2">첨부파일없음</td> -->
-						 	</c:if>
+				 	<td colspan="4">본문내용</td>
 				 </tr>
-				 <tr>
-				 	<td colspan="2">본문내용</td>
-				 </tr>
-				 	<tr><td colspan="2"><pre>${fboard.fContent}</pre>
+				 	<tr><td colspan="4">
+				 		<c:if test="${not empty fboard.fFilename }">
+						 		<img src="${conPath }/fileUp/${fboard.fFilename}" alt="${fboard.fFilename }_사진파일">
+						 	</c:if>
+				 		<br><br><pre>${fboard.fContent}</pre>
 				 </td>
 				 </tr>
 				 
 				 <tr>
-				 	<td colspan="2">
+				 	<td colspan="4">
 				 	<!-- 학생의 id이랑 fboard의 sid가 같으면 수정버튼 생성 -->
 				 		<c:if test="${student.sId eq fboard.sId }">
 				 			<button onclick="location='${conPath}/freeModifyView.do?fNo=${fboard.fNo }&pageNum=${param.pageNum }'">수정</button>
@@ -81,8 +106,6 @@
 				 	onclick="location='${conPath}/free.do?pageNum=${param.pageNum }'">			 
 			</table>
 		</div>
-		
-		<div id="content3"> content3</div>
 	</section>
 	
 	<jsp:include page="../main/footer.jsp" />

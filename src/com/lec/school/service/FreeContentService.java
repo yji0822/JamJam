@@ -13,14 +13,11 @@ public class FreeContentService implements Service {
 		// BoardContentService.java
 		
 		int fNo = Integer.parseInt(request.getParameter("fNo"));
-		System.out.println("fNo" + fNo);
 		
 		FreeBoardDao fboardDao = FreeBoardDao.getInstance();
 		FreeBoardDto fboard = fboardDao.contentView(fNo);
-		System.out.println("contentView");
 
 		request.setAttribute("fboard", fboard);
-		System.out.println("setAttribute" + fboard);
 
 	}
 
