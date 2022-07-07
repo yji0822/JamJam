@@ -25,7 +25,13 @@
 		
 	<jsp:include page="../main/header.jsp" />
 	<section>
-		<div id="content1"></div>
+		<div id="content1">
+            <div class="content1">
+                <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+            </div>
+           
+        </div>
+
 		<div id="content2">
 		
 			<form action="${conPath }/login.do" method="post" class="login">
@@ -53,7 +59,7 @@
 
 			</form>
 		</div>
-		<div id="content3"></div>
+
 	</section>
 	<jsp:include page="../main/footer.jsp" />
 

@@ -11,11 +11,10 @@ section {
 
 #content1, #content2, #content3 {
 	box-sizing: border-box;
-	border: 1px solid red;
 }
 
 #content1 {
-	height: 20%;
+	height: 13%;
 	margin-top: 10px;
 }
 
@@ -23,7 +22,7 @@ section {
 	/* border: 1px solid red; */
 	box-sizing: border-box;
 	width: 100%;
-	height: 87px;
+	height: 89px;
 	line-height: 87px;
 }
 
@@ -75,54 +74,103 @@ section {
 	font-size: 2em;
 }
 
+
+
+/* 본문 테이블 들어가는 부분 */
 #content2 {
-	height: 800px;
+	height: 780px;
 	background-color: whitesmoke;
 	border: 1px solid lightgray;
 	border-radius: 5px 5px 0 0;
 }
 
 #content2 table {
-	/* border: 2px solid green; */
 	box-sizing: border-box;
-	margin-top: 35px;
 	width: 95%;
 	height: 90%;
 }
 
-th {
-	border-bottom: 1px dashed black;
-	height: 40px;
+caption {
+	height : 60px;
+	line-height: 60px;
+	font-size : 25px;
 }
 
-th:nth-child(1) {
-	width: 30px;
-}
-th:nth-child(2) {
-	width: 150px;
-}
-th:nth-child(3) {
-	width: 30px;
-}
-th:nth-child(4) {
-	width: 30px;
-}
-th:nth-child(5) {
-	width: 30px;
+#content2 table tr:nth-child(1) {
+	height: 50px;
 }
 
-.left {
-	padding-left: 15px;
-	text-align: left;
+#content2 table tr:nth-child(2) {
+	height: 50px;
 }
+#content2 table tr:nth-child(3) {
+	height: 65px;
+}
+#content2 table tr:nth-child(4) {
+	height: 50px;
+}
+#content2 table tr:nth-child(5) {
+	height: 410px;
+}
+
 
 #content2 td {
-	width: 10%;
 	border: 1px dotted darkgray;
 	box-sizing: border-box;
-	margin-top: 10px;
 }
 
-#sname {
-	font-size: 1.2em;
+#content2 td:nth-child(1) {
+	width: 15%;
+	background-color: white;
+}
+#content2 td:nth-child(2) {
+	width: 35%;
+	background-color: white;
+}
+#content2 td:nth-child(3) {
+	width: 15%;
+	background-color: white;
+}
+#content2 td:nth-child(4) {
+	background-color: white;
+} 
+
+img {
+	width: 15%;
+	height: 45%;
+}
+
+
+/* 버튼 사이즈 및 스타일 적용*/
+.btn {
+	border: none;
+	width: 100px;
+	height: 50px;
+	background-color: navy;
+	color: white;
+	font-size: 1.1em;
+}
+.btnn {
+	border: 1px solid gray;
+	width: 100px;
+	height: 50px;
+	background-color: whitesmoke;
+	color: #000560;
+}
+input[type='button'] {
+	border: 1px solid gray;
+	width: 100px;
+	height: 50px;
+	background-color: navy;
+	color: white;
+	font-size: 1.1em;
+}
+
+button {
+	border: 1px solid gray;
+	width: 100px;
+	height: 50px;
+	background-color: navy;
+	color: white;
+	font-size: 1.1em;
 }

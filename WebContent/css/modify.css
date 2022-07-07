@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+section {
+	width: 1500px;
+	height: 750px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#content1, #content2, #content3 {
+	box-sizing: border-box;
+}
+
+#content1 {
+	height: 25%;
+	margin:0 auto;
+	text-align: center;
+	
+}
+
+#content1 .content1 {
+	box-sizing: border-box;
+	width: 100%;
+	height: 87px;
+
+}
+
+#content1 .content1 .logo {
+	width: 120px;
+	height: 85px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#content2 {
+	height: 800px;
+}
+
+#content2 .join {
+	text-align: center;
+}
+
+.join_table {
+	width: 35%;
+	border: 1px solid darkgray;
+	
+}
+
+.join_table caption {
+	background-color: #000560;
+	font-size: 1.5em;
+	color: whitesmoke;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.join_table th {
+	text-align: center;
+	width: 200px;
+	font-size: 1.2em;
+	box-sizing: border-box;
+	
+}
+
+.join_table td {
+	width: 60%;
+
+}
+
+input[type='text'], input[type='password'], input[type='number'], input[type='email']
+	{
+	text-align: left;
+	width: 250px;
+	height: 40px;
+	margin-left: 10px;
+	border: 1px solid gray;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+input[type='radio'] {
+	width: 20%;
+}
+
+input[type='file'] {
+	margin-left: 35px;
+	font-size: 1.1em;
+}
+
+label {
+	font-size: 1.2em;
+}
+
+input[type='submit'], input[type='reset'], input[type='button'] {
+	width: 125px;
+	height: 50px;
+	border: none;
+	outline: none;
+	color: whitesmoke;
+	background-color: #000560;
+	font-size: 1.2em;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+input[type='reset'] {
+	background-color: whitesmoke;
+	color: #000560;
+	border: 1px solid #000560;
+	
+}
+

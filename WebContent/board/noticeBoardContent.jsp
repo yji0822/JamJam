@@ -6,24 +6,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
 		
 		});
 	</script>
-	<link href="${conPath }/css/noticeBoard.css" rel="stylesheet" type="text/css" />
+	
+	<link href="${conPath }/css/noticeContent.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
-	<style>
-		#content1 {
-			height:85px;
-		}
-		.subject {
-			width: 50px;
-		}
-	</style>
 </head>
 
 <body>
@@ -33,38 +25,48 @@
 	<section>
 	
 	<div id="content1">
-		<div class="content1">
-        	<a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
-        </div>
-	</div>
+        <div class="content1">
+                <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+            </div>
+            <div id="lnb">
+                <ul>
+                    <li><a href="${conPath }/notice.do">공지사항</a></li>
+                    <li><a href="${conPath }/lunch.do">오늘의 급식</a></li>
+                    <li><a href="${conPath }/free.do">자유게시판</a></li>
+                    <li><a href="${conPath }/sAllView.do">반친구들</a></li>
+                </ul>
+            </div>
+    </div>
 	
 	<div id="content2">
 		<table>
-				 <caption>${nboard.nNo }번 글 상세보기</caption>
+				 <caption>${nboard.nNo }번 공지사항</caption>
+				 
 				 <tr>
-				 	<td class="subject">작성자</td>
-				 	<td>${nboard.aName}(${nboard.aId})</td>
+				 	<td>작성자</td>
+				 	<td>${nboard.aName} (${nboard.aId})</td>
+				 
+				 	<td>작성일</td>
+				 	<td>${nboard.nRdate }</td>
 				 </tr>
 				 <tr>
-				 	<td class="subject">제목</td>
-				 	<td>${nboard.nTitle }</td>
-				 </tr>
-				 <tr>
-				 	<td colspan="2">본문내용</td>
-				 </tr>
-				 	<tr><td colspan="2"><pre>${nboard.nContent}</pre>
-				 </td>
+				 	<td>제목</td>
+				 	<td colspan="3" class="nTitle">${nboard.nTitle }</td>
 				 </tr>
 				 
 				 <tr>
-				 	<td colspan="2">
+				 	<td colspan="4">본문내용</td>
+				 </tr>
+				 	<tr><td colspan="4" class="nContent"><pre>${nboard.nContent}</pre>
+				 </td>
+				 </tr>
+				 
+				 <tr class="add">
+				 	<td colspan="4" >
 				 	<!-- 관리자 계정으로 들어온 경우에만 삭제 버튼 보이고 수정이 가능하도록 -->
-<%-- 				 		<c:if test="${admin.aId eq nboard.aId }">
-				 			<button onclick="location='${conPath}/noticeModifyView.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'">수정</button>
-				 		</c:if> --%>
 				 		<c:if test="${not empty admin}">
-				 			<button onclick="location='${conPath}/noticeModifyView.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'">수정</button>
-			 				<button onclick="location='${conPath}/noticeDelete.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'">삭제</button>
+				 			<button onclick="location='${conPath}/noticeModifyView.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'" class="btn">수정</button>
+			 				<button onclick="location='${conPath}/noticeDelete.do?nNo=${nboard.nNo }&pageNum=${param.pageNum }'" class="btn1">삭제</button>
 			 			</c:if>
 				
 				 			<input type="button" value="목록" class="btn"
@@ -72,7 +74,6 @@
 			</table>
 		</div>
 		
-		<div id="content3"> content3</div>
 	</section>
 	
 	<jsp:include page="../main/footer.jsp" />

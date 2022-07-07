@@ -92,8 +92,9 @@ section {
 
 #content2 td {
 	width: 25%;
-	border: 1px dotted darkgray;
+	border: 1px dashed darkgray;
 	box-sizing: border-box;
+	background-color: white;
 }
 #sname {
 	font-size: 1.2em;

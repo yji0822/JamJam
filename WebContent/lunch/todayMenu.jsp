@@ -10,6 +10,17 @@
 	<link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
+	<style>
+	h3 {
+		text-align: center;
+		line-height : 100px;
+	}
+		#exit {
+			width: 35px;
+			height : 35px;
+		}
+	</style>
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -22,7 +33,7 @@
 
 <body>
 	
-	<h4>오늘의 급식 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <button>X</button></h4>
+	<h3>오늘의 급식 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <button id="exit">X</button></h3>
 	<hr>
 	<table>
 		<tr>
@@ -48,7 +59,7 @@
 					<img src="${conPath }/img/noimg.png">
 				</c:if>
 				<c:if test="${not empty lunch.photo }">
-					<img src="${conPath }/lunchPic/${dto.photo}">
+					<img src="${conPath }/lunchPic/${lunch.photo}">
 				</c:if>
 			</td>
 	</table>

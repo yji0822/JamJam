@@ -86,8 +86,12 @@
 	<jsp:include page="../main/header.jsp" />
 	
 	<section>
-        <div id="content1">
+		<div id="content1">
+            <div class="content1">
+                <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+            </div>
         </div>
+
         <div id="content2">
             <form action="${conPath }/join.do" method="post" enctype="multipart/form-data" class="join" >
                
@@ -154,9 +158,7 @@
 
             </form>
         </div>
-        <div id="content3">
             
-        </div>
     </section>
     
     

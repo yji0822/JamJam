@@ -6,7 +6,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	
+	<link href="${conPath }/css/freeBoardReply.css" rel="stylesheet" type="text/css" />
+	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
+	rel="stylesheet">
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -37,7 +41,7 @@
 			<input type="hidden" name="fIndent" value="${originBoard.fIndent }">
 			<input type="hidden" name="pageNum" value="${param.pageNum }">
 			<table>
-				<caption>${originBoard.fNo }번 글 답변</caption>
+				<caption> ${originBoard.fNo }번 게시글 답변</caption>
 				<tr><td>작성자</td><td>${student.sName }(${student.sId })</td></tr>
 				<tr><td>제목</td><td><input type="text" name="fTitle"
 								required="required" size="30"
@@ -45,10 +49,10 @@
 				<tr><td>본문</td><td><textarea name="fContent" rows="3" cols="3"></textarea></td></tr>
 				<tr><td>첨부파일</td><td><input type="file" name="fFilname"></td></tr>
 				<tr><td colspan="2">
-							<input type="submit" value="답변쓰기" class="btn">
-							<input type="reset" value="취소" class="btn">
+							<input type="reset" value="초기화" class="btn">
 							<input type="button" value="목록" class="btn"
 								onclick="location.href='${conPath}/free.do'">
+							<input type="submit" value="답변쓰기" class="btn">
 			</table>
 		</form>
         </div>

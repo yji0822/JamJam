@@ -7,6 +7,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	
+	<link href="${conPath }/css/noticeBoard2.css" rel="stylesheet" type="text/css" />
+	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
+	rel="stylesheet">
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -20,60 +25,19 @@
 			});
 		});
 	</script>
-	<link href="${conPath }/css/noticeBoard.css" rel="stylesheet" type="text/css" />
-	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
-	rel="stylesheet">
-	<style>
-		table {
-			margin-top: 35px;
-			width: 85%;
-		}
-		
-		#content2 table tr:hover {
-			font-weight: bold;
-			font-size: 1.2em;
-		}
-		#content2 table tr:first-child:hover{
-			font-weight: none;
-			font-size: 1em;
-		}
-		
-		th {
-		width: 20%;
-		}
-		
-		td {
-			width: 100px;
-		}
-	</style>
+	
+	
 </head>
 
 <body>
-	<%-- <c:if test="${not empty adminLoginResult }">
-		<script>
-			alert('${adminLoginResult}');
-		</script>
-	</c:if>
-	<c:if test="${not empty adminLoginError }">
-		<script>
-			history.back();
-		</script>
-	</c:if>
-	
-		<c:if test="${not empty loginErrorMsg }">
-		<script>
-			alert('${loginErrorMsg}');
-			history.back();
-		</script>
-	</c:if> --%>
 	<c:if test="${not empty withdrawalResult }">
 		<script>
 			alert('${withdrawalResult}');
 		</script>
 	</c:if>
 	
-	<c:if test="${not empty nboaredResult }">
-		<script>alert('${nboaredResult}');</script>
+	<c:if test="${not empty nboardResult }">
+		<script>alert('${nboardResult}');</script>
 	</c:if>
 	
 	
@@ -110,22 +74,28 @@
 			<c:forEach items="${noticeList }" var="notice">
 				<tr><td>${notice.nNo }</td>
 						<td class="left">
-							<%-- <c:forEach var="i" begin="1" end="${noticeList.fIndent }">
-								<c:if test="${i==noticeList.nIndent }">└─</c:if>
-								<c:if test="${i!=noticeList.nIndent }"> &nbsp; &nbsp; </c:if>
-							</c:forEach> --%>
 							${notice.nTitle } <!-- 글제목에 a태그를 걸지 말고 query로 tr을 클릭하면 상세보기 페이지로 가기 -->
 						<td>${notice.aName }</td>
-							<%-- <c:if test="${not empty noticeList.nFileName }">
-								<img src="https://cdn-icons-png.flaticon.com/512/5088/5088374.png" width="10">
-							</c:if> --%>
-						</td>
 						<td>${notice.nHit }</td>
-						<td><fmt:formatDate value="${notice.nRdate }" type="date" dateStyle="short"/></td>
+						<td><fmt:formatDate value="${notice.nRdate }" pattern="yy-MM-dd"/></td>
 				</tr>
 			</c:forEach>
 		</c:if>
-        	</table>
+		
+		
+		<c:if test="${empty student and not empty admin}">
+			<tr>
+				<td colspan="5" class="write"><b><a href="${conPath }/noticeWriteView.do">공지사항 작성하기</a></b></td> 
+			</tr>
+		</c:if>
+		
+		<c:if test="${not empty student or empty admin}">
+			<tr>
+				<td colspan="5" class="write">-</td> 
+			</tr>
+		</c:if>
+		
+        </table>
         </div>
         
         <div id="content3">

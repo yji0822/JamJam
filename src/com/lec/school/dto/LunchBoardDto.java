@@ -23,7 +23,6 @@ public class LunchBoardDto {
 	}
 	
 	public LunchBoardDto(int lNo, Date ldate, String ampm, String menu, double calorie, String photo, int day) {
-		super();
 		this.lNo = lNo;
 		this.ldate = ldate;
 		this.ampm = ampm;

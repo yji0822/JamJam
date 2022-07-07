@@ -9,10 +9,8 @@ public class ReplyDto {
 	private Date rRdate;
 	private String rIp;
 	private int fNo;
-	public ReplyDto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
+	public ReplyDto() {}
 	public ReplyDto(int rNo, String sId, String rContent, Date rRdate, String rIp, int fNo) {
 		super();
 		this.rNo = rNo;

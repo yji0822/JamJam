@@ -201,8 +201,43 @@ public class NoticeBoardDao {
 			}
 			return dto;
 		}
+		
+		// (6-1) nNo로 글 dto불러오기 : 답변글 view + 수정 view (nNo로 dto리턴)
+		public NoticeBoardDto modifyView_replyView(int nNo) {
+			NoticeBoardDto dto = null;
+			Connection        conn  = null;
+			PreparedStatement pstmt = null;
+			ResultSet         rs    = null;
+			String sql = "SELECT N.*, ANAME FROM NOTICE_BOARD N, ADMIN A WHERE N.AID = A.AID AND NNO = ?";
+			try {
+				conn = getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, nNo);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					String aId   = rs.getString("aId");
+					String aName = rs.getString("aName"); 
+					String nTitle= rs.getString("nTitle");
+					String nContent= rs.getString("nContent");
+					Date   nRdate   = rs.getDate("nRdate");
+					int    nHit    = rs.getInt("nHit");
+					dto = new NoticeBoardDto(nNo, aId, aName, nTitle, nContent, nRdate, nHit);
+				}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}finally {
+				try {
+					if(rs   !=null) rs.close();
+					if(pstmt!=null) pstmt.close();
+					if(conn !=null) conn.close();
+				} catch (SQLException e) {
+					System.out.println(e.getMessage());
+					}
+			}
+			return dto;
+		}
 
-		// (6) 글 수정하기(nno, ntitle, ncontent, nrdate)
+		// (6-2) 글 수정하기(nno, ntitle, ncontent, nrdate)
 		public int modifyBoard(int nNo, String nTitle, String nContent) {
 			
 			int result = FAIL;
@@ -221,7 +256,7 @@ public class NoticeBoardDao {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, nTitle);
 				pstmt.setString(2, nContent);
-				pstmt.setInt(5, nNo);
+				pstmt.setInt(3, nNo);
 				
 				result = pstmt.executeUpdate();
 				System.out.println(result==SUCCESS? "글수정성공":"글수정실패");
@@ -232,10 +267,13 @@ public class NoticeBoardDao {
 				try {
 					if(pstmt!=null) pstmt.close();
 					if(conn !=null) conn.close();
-				} catch (SQLException e) {System.out.println(e.getMessage());}
+				} catch (SQLException e) {
+					System.out.println(e.getMessage());
+				}
 			}
 			return result;
 		}
+		
 		// (7) 글 삭제하기(bId로 삭제하기)
 		public int deleteBoard(int nNo) {
 			

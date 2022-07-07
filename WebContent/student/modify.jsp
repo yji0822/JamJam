@@ -6,6 +6,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	
+	<link href="${conPath }/css/modify.css" rel="stylesheet" type="text/css" />
 	<link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
@@ -70,17 +72,18 @@
 	<jsp:include page="../main/header.jsp" />
 	
 	<div id="content1">
-		<a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
-    </div>
-    
+            <div class="content1">
+                <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+            </div>
+        </div>
+        
     <div id="content2">
     	<form action="${conPath }/modify.do" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="dbsPhoto" value="${student.sPhoto }">
-			<table>
+			<table class="join_table">
 				<tr>
 					<th>아이디</th>
-					<td><input type="text" name="sId" value="${student.sId }"
-						readonly="readonly"></td>
+					<td><input type="text" name="sId" value="${student.sId }" readonly="readonly"></td>
 					<td rowspan="4">
 						<img src="${conPath }/fileUp/${student.sPhoto}" width="300">
 					</td>
@@ -109,6 +112,7 @@
 				 
 				<c:if test="${student.sGender eq 'm'}">
 					<tr>
+					<th>성별</th>
 					<td>
 						<input type="radio" name="sGender" value="m" checked="checked" id="m"><label for="m">남자</label>
 						<input type="radio" name="sGender" value="w" id="w"><label for="w">여자</label>
@@ -118,6 +122,7 @@
 				
 				<c:if test="${student.sGender eq 'w'}">
 					<tr>
+					<th>성별</th>
 					<td>
 						<input type="radio" name="sGender" value="m" id="m"><label for="m">남자</label>
 						<input type="radio" name="sGender" value="w" id="w" checked="checked" ><label for="w">여자</label>
@@ -150,8 +155,7 @@
 		</form>
     </div>
     
-    <div id="content3">
-    </div>
+
 	
 		
 	
@@ -165,7 +169,7 @@
 	$(function() {
 		$("#sBirth").datepicker(
 				{
-					dateFormat : 'y-mm-dd',
+					dateFormat : 'yy-mm-dd',
 					changeMonth : true, // 월을 바꿀 수 있는 셀렉트 박스 표시
 					monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월',
 							'7월', '8월', '9월', '10월', '11월', '12월' ],

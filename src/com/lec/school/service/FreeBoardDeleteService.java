@@ -19,9 +19,9 @@ public class FreeBoardDeleteService implements Service {
 		int result = fboardDao.deleteBoard(fRef, fStep, fIndent); // 글 삭제 로직
 		
 		if(result == FreeBoardDao.SUCCESS) {
-			request.setAttribute("fboaredResult", "글 삭제 성공");
+			request.setAttribute("fboardResult", "글 삭제 성공");
 		}else {
-			request.setAttribute("fboaredResult", "글 삭제 실패");
+			request.setAttribute("fboardResult", "글 삭제 실패");
 		}
 
 	}

@@ -17,9 +17,9 @@ public class NoticeBoardDeleteService implements Service {
 		int result = nboardDao.deleteBoard(nNo);
 		
 		if(result == NoticeBoardDao.SUCCESS) {
-			request.setAttribute("nboaredResult", "공지글 삭제 성공");
+			request.setAttribute("nboardResult", "공지글 삭제 성공");
 		}else {
-			request.setAttribute("nboaredResult", "공지글 삭제 실패");
+			request.setAttribute("nboardResult", "공지글 삭제 실패");
 		}
 
 	}

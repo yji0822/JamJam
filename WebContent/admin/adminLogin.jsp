@@ -36,7 +36,13 @@
 	<jsp:include page="../main/header.jsp" />
 	
 	<section>
-		<div id="content1"></div>
+		<div id="content1">
+            <div class="content1">
+                <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+            </div>
+           
+        </div>
+        
 		<div id="content2">
 		
 			<form action="${conPath }/adminLogin.do" method="post" class="login">
@@ -56,6 +62,7 @@
 					</tr>
 					<tr>
 						<td colspan="2">
+							<input type="button" value="뒤로가기" onclick="history.back()">
 							<input type="submit" value="로그인" />
 						</td>
 					</tr>

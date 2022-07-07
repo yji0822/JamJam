@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+/**************  section **************/
+section {
+	width: 1500px;
+	height: 870px;
+	/* border: 1px solid black; */
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#content1, #content2, #content3 {
+	box-sizing: border-box;
+}
+
+#content1 {
+	height: 20%;
+	margin-top: 10px;
+}
+
+#content1 .content1 {
+	/* border: 1px solid red; */
+	box-sizing: border-box;
+	width: 100%;
+	height: 87px;
+	line-height: 87px;
+}
+
+#content1 .content1 .logo {
+	width: 70px;
+	height: 55px;
+	margin-top: 15px;
+}
+
+#content1 #lnb {
+	clear: both;
+	width: 80%;
+}
+
+#content1 #lnb ul {
+	overflow: hidden;
+}
+
+#content1 #lnb ul li {
+	float: left;
+	width: 25%;
+	height: 85px;
+	line-height: 85px;
+	font-size: 1.2em;
+	background-color: white;
+	border-radius: 7px 7px 0 0;
+	border-top: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+	border-left: 1px solid lightgray;
+	box-sizing: border-box;
+}
+
+/* 공지사항, 오늘의 급식, 자유게시판, 반 친구들 */
+/************* 공지사항 ****************/
+#content1 #lnb ul li:nth-child(1) {
+	background-color: whitesmoke;
+	font-size: 1.5em;
+}
+
+#content1 #lnb a {
+	text-align: center;
+}
+
+#content1 #lnb ul li:hover {
+	background-color: whitesmoke;
+	font-size: 1.5em;
+}
+
+#content1 #lnb ul li:active {
+	font-size: 2em;
+}
+
+
+/* 본문 테이블 들어가는 부분 */
+#content2 {
+	height: 680px;
+	background-color: whitesmoke;
+	border: 1px solid lightgray;
+	border-radius: 5px 5px 0 0;
+}
+
+#content2 table {
+	box-sizing: border-box;
+	width: 95%;
+	height: 90%;
+}
+
+caption {
+	height : 60px;
+	line-height: 60px;
+	font-size : 25px;
+}
+
+#content2 table tr:nth-child(1) {
+	height: 65px;
+}
+
+#content2 table tr:nth-child(2) {
+	height: 65px;
+
+}
+#content2 table tr:nth-child(3) {
+	height: 390px;
+}
+#content2 table tr:nth-child(4) {
+	height: 80px;
+}
+
+
+#content2 table th {
+	width: 10%;
+	border: 1px dotted darkgray;
+	background-color: white;
+}
+
+#content2 td {
+	border: 1px dotted darkgray;
+	box-sizing: border-box;
+}
+
+#content2 td:nth-child(1) {
+	background-color: white;
+}
+#content2 td:nth-child(2) {
+	background-color: white;
+}
+#content2 td:nth-child(3) {
+	background-color: white;
+}
+#content2 td:nth-child(4) {
+	background-color: white;
+} 
+
+
+/* 버튼 사이즈 및 스타일 적용*/
+.btn {
+	border: none;
+	width: 100px;
+	height: 60px;
+	background-color: navy;
+	color: white;
+}
+
+.btn {
+	border: none;
+	width: 100px;
+	height: 50px;
+	background-color: navy;
+	color: white;
+	font-size: 1.1em;
+}
+.btnn {
+	border: 1px solid gray;
+	width: 100px;
+	height: 50px;
+	background-color: whitesmoke;
+	color: #000560;
+}
+input[type='button'] {
+	border: 1px solid gray;
+	width: 100px;
+	height: 50px;
+	background-color: navy;
+	color: white;
+	font-size: 1.1em;
+}
+
+button {
+	border: 1px solid gray;
+	width: 100px;
+	height: 50px;
+	background-color: navy;
+	color: white;
+	font-size: 1.1em;
+}
+
+/* input type들 디자인 변경 */
+input[type='text'] {
+	border: 1px solid darkgray;
+	width: 98%;
+	height: 80%;
+	font-size: 1.2em;
+	padding-left: 8px;
+	box-sizing: border-box;
+}
+textarea {
+	border: 1px solid darkgray;
+	width: 98%;
+	height: 95%;
+	font-size: 1.2em;
+	padding: 8px;
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+
+input[type='file'] {
+	box-sizing: border-box;
+	width: 85%;
+	text-align: left;
+	font-size: 1.1em;
+}
+

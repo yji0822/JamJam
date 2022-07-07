@@ -21,10 +21,10 @@
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
 	<style>
+		
 		marquee{
 			font-size: 2em;
-			width: 800px;
-			margin-bottom: 20px;
+			width: 1200px;
 		}
 	</style>
 </head>
@@ -57,7 +57,7 @@
 				<a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
 				<div id="lnb">
              		<!-- <mark>모든 메뉴는 로그인 후 이용할 수 있습니다.</mark> -->
-             		<marquee direction=left width=300 height=70 scrolldelay="100" bgcolor="#b7d485">
+             		<marquee direction=left scrolldelay="1" >
              		모든 메뉴는 로그인 후 이용할 수 있습니다.
              		</marquee>
             	</div>
@@ -80,12 +80,13 @@
         </div>
         
 		<div id="content2">
-			<img src="${conPath }/img/picture.jpeg" id="photo" alt="photo" />
+			<img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMjhfMTY3%2FMDAxNjA5MTQwOTgzMDcx.jtvKF1qL-l4ef4CgbUMCceSNCmVCgveiXcFpGRTyANUg.Nvi8RqGMvnYfsdMcoUV1Z0gqu-Tq-SdCdjjxZX6KDYcg.PNG.easily-sis%2Fimage.png&type=sc960_832" 
+			id="photo" alt="photo" />
 		</div>
 		
 		<div id="content3">
 			<div class="goal1">
-				하기실음 관두등가<br /> 河己失音 官頭登可<br />
+				JUST DO IT
 			</div>
 			<div class="goal2">
 				강이 소리를 내지 않고 묵묵히 흘러가는 것처럼<br /> 열심히 공부해야 성공할 수 있다!

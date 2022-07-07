@@ -48,9 +48,9 @@ public class FreeBoardReplyService implements Service {
 					
 					// joinMember결과에 따라 적절히 request.setAttribute
 					if(result == FreeBoardDao.SUCCESS) { // 댓글 게시판 작성 진행
-						request.setAttribute("boaredResult", "답글 게시판 작성 성공");
+						request.setAttribute("fboardResult", "답글 게시판 작성 성공");
 					}else {
-						request.setAttribute("boaredResult", "답글 게시판 작성 실패");
+						request.setAttribute("fboardResult", "답글 게시판 작성 실패");
 					}
 					
 					
@@ -68,7 +68,7 @@ public class FreeBoardReplyService implements Service {
 					try {
 						File serverFile = new File(path+"/"+fFilename);
 						is = new FileInputStream(serverFile);
-						os = new FileOutputStream("C:\\Users\\dbswj\\Desktop\\WebProgramming\\Source\\00_semiProject\\School\\WebContent\\fileUp"+fFilename);
+						os = new FileOutputStream("C:\\Users\\dbswj\\Desktop\\WebProgramming\\Source\\00_semiProject\\School\\WebContent\\fileUp\\"+fFilename);
 						byte[] bs = new byte[(int)serverFile.length()];
 						while(true) {
 							int nByteCnt = is.read(bs);

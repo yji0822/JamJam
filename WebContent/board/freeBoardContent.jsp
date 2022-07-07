@@ -15,35 +15,13 @@
 	<link href="${conPath }/css/freeBoardContent.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
-	<style>
-		#content1 {
-			height:85px;
-		}
-		.subject {
-			width: 50px;
-		}
-		
-		img {
-		
-			height: 220px;
-			width: 200px;
-		}
-		button {
-			width: 100px;
-			height: 40px;
-		}
-		.btn {
-			width: 100px;
-			height: 40px;
-		}
-	</style>
 </head>
 
 <body>
 	
-	<c:if test="${not empty fboaredResult }">
+	<c:if test="${not empty fboardResult }">
 		<script>
-			alert('${fboaredResult }');
+			alert('${fboardResult }');
 		</script>
 	</c:if>
 	
@@ -100,9 +78,9 @@
 				 				<button onclick="location='${conPath}/freeDelete.do?fRef=${fboard.fRef }&fStep=${fboard.fStep }&fIndent=${fboard.fIndent }&pageNum=${param.pageNum }'">삭제</button>
 				 			</c:if>
 				 			<c:if test="${not empty student }">
-				 				<button onclick="location='${conPath}/freeReplyView.do?fNo=${fboard.fNo }&pageNum=${param.pageNum }'">답변</button>
+				 				<button onclick="location='${conPath}/freeReplyView.do?fNo=${fboard.fNo }&pageNum=${param.pageNum }'" class="btn">답변</button>
 				 			</c:if>
-				 			<input type="button" value="목록" class="btn"
+				 			<input type="button" value="목록" 
 				 	onclick="location='${conPath}/free.do?pageNum=${param.pageNum }'">			 
 			</table>
 		</div>

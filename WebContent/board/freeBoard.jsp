@@ -8,25 +8,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link href="${conPath }/css/freeBoardContent.css" rel="stylesheet" type="text/css" />
+	<link href="${conPath }/css/freeBoardList.css" rel="stylesheet" type="text/css" />
 	<link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
 	
 	<style>
-		.write_btn {
-			width: 100px;
-			height: 
-		}
+		
 		
 		#content2 table tr:hover {
 			font-weight: bold;
-			font-size: 1.2em;
+			font-size: 1.1em;
 		}
 		#content2 table tr:first-child:hover{
 			font-weight: none;
 			font-size: 1em;
 		}
+		
+		.contnet3
 	</style>
 	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -45,12 +44,15 @@
 	.file_img {
 		width: 20px;
 		height: 20px;
-		line-height: 50px;
+		line-height: 100px;
 	}
 	
-	.btn {
-		width: 100px;
-		height: 40px;
+	.write {
+		height: 60px;
+	}
+	.write:hover {
+		background-color: white;
+		border: 1px solid gray;
 	}
 	</style>
 	
@@ -59,7 +61,7 @@
 <body>
 	
 	<c:if test="${not empty fboaredResult }">
-		<script>alert('${fboaredResult}');</script>
+		<script>alert('${fboardResult }');</script>
 	</c:if>
 	
 	<jsp:include page="../main/header.jsp" />
@@ -107,21 +109,31 @@
 					</td>
 					<td>${board.sName }</td>
 					<td>${board.fHit }</td>
-					<td><fmt:formatDate value="${board.fRdate }" type="date" dateStyle="short"/></td>
+					<td><fmt:formatDate value="${board.fRdate }" pattern="yy-MM-dd"/></td>
 						<%-- <td>${fboard.fIp }</td> --%>
 				</tr>
 			</c:forEach>
 		</c:if>
+		
+		
+		<c:if test="${not empty student and empty admin}">
 			<tr>
-				<td colspan="5"><b><a href="${conPath }/freeWriteView.do">글 쓰기</a></b></td> 
-				<%-- <td colspan="5"><input type="button" value="글쓰기" class="btn"
-				 	onclick="location='${conPath}/freeWriteView.do'"></td> --%>
+				<td colspan="5" class="write"><b><a href="${conPath }/freeWriteView.do">글 쓰기</a></b></td> 
 			</tr>
+		</c:if>
+		
+		<c:if test="${empty student and not empty admin}">
+			<tr>
+				<td colspan="5" class="write">선생님은 게시글 삭제 권한만 있습니다.</td> 
+			</tr>
+		</c:if>
+			
         </table>
         </div>
         
         <div id="content3">
-            <a href="${conPath }/free.do?pageNum=1">&lt;&lt;</a>
+        	
+        	<a href="${conPath }/free.do?pageNum=1">&lt;&lt;</a>
 		&nbsp; &nbsp; &nbsp;
 		<c:if test="${startPage>BLOCKSIZE }">
 			<a href="${conPath }/free.do?pageNum=${startPage-1}">&lt;</a>
@@ -147,9 +159,8 @@
 		</c:if>
 		&nbsp; &nbsp; &nbsp;
 		<a href="${conPath }/free.do?pageNum=${pageCnt}">&gt;&gt;</a> 
-		
-			
-		
+        	
+        	
         </div>
         
     </section>

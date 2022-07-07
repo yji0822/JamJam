@@ -14,7 +14,7 @@
 	
 	<footer>
         <div id="footer1">
-            <a href="#"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+            <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
         </div>
         <div id="footer2">	
             	<div id ="address">
