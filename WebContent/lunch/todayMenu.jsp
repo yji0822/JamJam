@@ -1,41 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="conPath" value="${pageContext.request.contextPath }"/>    
+<c:set var="conPath" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<link href="${conPath }/css/style.css" rel="stylesheet">
-	<link
+<meta charset="UTF-8">
+<%-- <link href="${conPath }/css/style.css" rel="stylesheet"> --%>
+<link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
-	<style>
-	h3 {
-		text-align: center;
-		line-height : 100px;
-	}
-		#exit {
-			width: 35px;
-			height : 35px;
-		}
-	</style>
-	
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('button').click(function(){
-				close();
-			});
+<style>
+* {
+	font-family: 'NanumSquareLight';
+	font-family: 'NanumSquare';
+	font-family: 'NanumSquareBold';
+	font-family: 'NanumSquareExtraBold';
+	font-family: 'NanumSquareAcb';
+	font-family: 'NanumSquareAceb';
+	font-family: 'NanumSquareAcl';
+	font-family: 'NanumSquareAcr';
+}
+
+table {
+	margin: 0 auto;
+	border: 1px solid darkgray;
+	box-sizing: border-box;
+}
+
+caption {
+	border: 1px solid darkgray;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+table th {
+	border: 1px dotted darkgray;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+table td {
+	border: 1px dotted darkgray;
+	box-sizing: border-box;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+img {
+	width: 300px;
+	height: 300px; 
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('button').click(function() {
+			close();
 		});
-	</script>
+	});
+</script>
 </head>
 
 <body>
-	
-	<h3>오늘의 급식 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <button id="exit">X</button></h3>
-	<hr>
+
+
 	<table>
+		<caption>
+			오늘의 급식&nbsp;&nbsp;&nbsp;
+			<button id="exit">X</button>
+		</caption>
 		<tr>
 			<th>급식</th>
 			<td>${lunch.ampm }</td>
@@ -54,15 +88,12 @@
 		</tr>
 		<tr>
 			<th>식단이미지</th>
-			<td>
-				<c:if test="${empty lunch.photo }">
+			<td><c:if test="${empty lunch.photo }">
 					<img src="${conPath }/img/noimg.png">
-				</c:if>
-				<c:if test="${not empty lunch.photo }">
+				</c:if> <c:if test="${not empty lunch.photo }">
 					<img src="${conPath }/lunchPic/${lunch.photo}">
-				</c:if>
-			</td>
+				</c:if></td>
 	</table>
-	
+
 </body>
 </html>

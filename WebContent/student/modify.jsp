@@ -71,6 +71,8 @@
 	
 	<jsp:include page="../main/header.jsp" />
 	
+	
+	<section>
 	<div id="content1">
             <div class="content1">
                 <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
@@ -82,37 +84,37 @@
 			<input type="hidden" name="dbsPhoto" value="${student.sPhoto }">
 			<table class="join_table">
 				<tr>
-					<th>아이디</th>
-					<td><input type="text" name="sId" value="${student.sId }" readonly="readonly"></td>
-					<td rowspan="4">
+					<td rowspan="9" id="profile">
 						<img src="${conPath }/fileUp/${student.sPhoto}" width="300">
 					</td>
+					<th class="cap">아이디</th>
+					<td><input type="text" name="sId" value="${student.sId }" readonly="readonly"></td>
 				</tr>
 				<tr>
-					<th>비밀번호</th>
+					<th class="cap">비밀번호</th>
 					<td><input type="password" name="sPw" value="${student.sPw }" required="required"></td>
 				</tr>
 				<tr>
-					<th>이름</th>
+					<th class="cap">이름</th>
 					<td><input type="text" name="sName" value="${student.sName }" required="required"></td>
 				</tr>
 				 <tr>
-                        <th>출석번호</th>
+                        <th class="cap">출석번호</th>
                         <td><input type="number" name="sNo" value="${student.sNo }" required="required" /></td>
                     </tr>
                  <tr>
-                        <th>핸드폰번호</th>
+                        <th class="cap">핸드폰번호</th>
                         <td><input type="text" name="sTel" value="${student.sTel }" required="required"/></td>
                     </tr>
 				<tr>
-					<th>이메일</th>
+					<th class="cap">이메일</th>
 					<td><input type="email" name="sEmail" value="${student.sEmail }">
 					<div id="emailConfirmResult">&nbsp;</div></td>
 				</tr>
 				 
 				<c:if test="${student.sGender eq 'm'}">
 					<tr>
-					<th>성별</th>
+					<th class="cap">성별</th>
 					<td>
 						<input type="radio" name="sGender" value="m" checked="checked" id="m"><label for="m">남자</label>
 						<input type="radio" name="sGender" value="w" id="w"><label for="w">여자</label>
@@ -122,7 +124,7 @@
 				
 				<c:if test="${student.sGender eq 'w'}">
 					<tr>
-					<th>성별</th>
+					<th class="cap">성별</th>
 					<td>
 						<input type="radio" name="sGender" value="m" id="m"><label for="m">남자</label>
 						<input type="radio" name="sGender" value="w" id="w" checked="checked" ><label for="w">여자</label>
@@ -133,22 +135,21 @@
 				
 				
 				<tr>
-					<th>사진</th>
-					<td colspan="2"><input type="file" name="sPhoto"></td>
+					<th class="cap">사진</th>
+					<td><input type="file" name="sPhoto"></td>
 				</tr>
 				<tr>
-					<th>생년월일</th>
-					<td colspan="2"><input type="text" name="sBirth" id="sBirth"
+					<th class="cap">생년월일</th>
+					<td><input type="text" name="sBirth" id="sBirth"
 						value="${student.sBirth }"></td>
 				</tr>
 				
 				<tr>
 					<td colspan="3">
-						<input type="submit" value="정보수정" class="btn">
+						<input type="button" value="회원탈퇴" onclick="location.href='#'" class="btn">
 						<input type="reset" value="초기화" class="btn"> 
 						<input type="button" value="이전" onclick="history.go(-1)" class="btn">
-						<input type="button" value="회원탈퇴"
-						onclick="location.href='${conPath}/withdrawal.do'" class="btn">
+						<input type="submit" value="수정완료" class="btn">
 					</td>
 				</tr>
 			</table>
@@ -156,8 +157,7 @@
     </div>
     
 
-	
-		
+	</section>
 	
 	<jsp:include page="../main/footer.jsp" />
 	

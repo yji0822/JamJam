@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<link href="${conPath }/css/freeBoardModify2.css" rel="stylesheet" type="text/css" />
+	<link href="${conPath }/css/noticeBoardModify2.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
 
@@ -40,9 +40,9 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-					<input type="submit" value="글쓰기" class="btn">
 					<input type="reset" value="취소" class="btn">
 					<input type="button" value="목록" class="btn" onclick="location.href='${conPath}/notice.do'">
+					<input type="submit" value="글쓰기" class="btn">
 					</td>
 			</table>
 			

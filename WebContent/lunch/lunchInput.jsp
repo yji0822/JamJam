@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	
-	<link href="${conPath }/css/lunch.css" rel="stylesheet" type="text/css" />
+	<link href="${conPath }/css/lunchInput.css" rel="stylesheet" type="text/css" />
 <link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">

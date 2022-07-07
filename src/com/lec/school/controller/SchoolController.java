@@ -60,7 +60,7 @@ public class SchoolController extends HttpServlet {
 		String viewPage = null;
 		Service service = null;
 
-		/******************* 메인 로그인 회원가입 로그아웃 *************************/
+		/******************* 메인 로그인 회원가입 로그아웃 ***********************/
 		if (com.equals("/main.do")) { // 메인화면
 			viewPage = "main/main.jsp";
 		} else if (com.equals("/loginView.do")) { // 로그인 화면

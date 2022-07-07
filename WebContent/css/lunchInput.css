@@ -12,7 +12,7 @@ section {
 }
 
 #content1 {
-	height: 13%;
+	height: 17%;
 }
 
 #content1 .content1 {
@@ -30,7 +30,7 @@ section {
 }
 
 #content2 {
-	height: 500px;
+	height: 800px;
 }
 
 #content2 .join {
@@ -38,19 +38,11 @@ section {
 }
 
 .join_table {
-	width: 65%;
+	width: 35%;
 	border: 1px solid darkgray;
-	margin-top: 50px;
 	
 }
 
-#profile {
-	width: 40%;
-	
-}
-.cap {
-	width: 100px;
-}
 .join_table caption {
 	background-color: #000560;
 	font-size: 1.5em;
@@ -61,17 +53,15 @@ section {
 
 .join_table th {
 	text-align: center;
-	width: 300px;
+	width: 200px;
 	font-size: 1.2em;
 	box-sizing: border-box;
-	border: 1px dotted gray;
 	
 }
 
 .join_table td {
-	border: 1px dotted gray;
-	box-sizing: border-box;
-	width: 350px;
+	width: 60%;
+
 }
 
 input[type='text'], input[type='password'], input[type='number'], input[type='email']
@@ -87,12 +77,10 @@ input[type='text'], input[type='password'], input[type='number'], input[type='em
 
 input[type='radio'] {
 	width: 20%;
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 input[type='file'] {
-	margin-left: 46px;
+	margin-left: 35px;
 	font-size: 1.1em;
 }
 
@@ -108,8 +96,8 @@ input[type='submit'], input[type='reset'], input[type='button'] {
 	color: whitesmoke;
 	background-color: #000560;
 	font-size: 1.2em;
-	margin-top: 25px;
-	margin-bottom: 25px;
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
 input[type='reset'] {
@@ -118,9 +106,4 @@ input[type='reset'] {
 	border: 1px solid #000560;
 	
 }
-img {
-	width: 270px;
-	height: 350px;
-}
-
 
