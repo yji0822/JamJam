@@ -7,11 +7,6 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(document).ready(function(){
-		
-		});
-	</script>
 	<link href="${conPath }/css/freeBoardContent.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">

@@ -133,7 +133,6 @@ public class SchoolController extends HttpServlet {
 			service.execute(request, response); 
 			viewPage = "notice.do"; 
 		} 
-		/* 진행중 */
 		else if (com.equals("/noticeWriteView.do")) { // 공지사항 게시글 폼
 			viewPage = "board/noticeBoardWrite.jsp";
 		} 

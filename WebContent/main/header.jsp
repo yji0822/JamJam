@@ -30,10 +30,8 @@
 	
 	<c:if test="${empty student and empty admin}"> <%-- 로그인 전 화면 --%>
         <div id="header1">
-            <a href="${conPath }/main.do" class="header1">메인으로 가기</a>
         </div>
         <div id="header2">
-            header2
         </div>
         <div id="header3">
             <ul>
@@ -46,10 +44,8 @@
 	
 	<c:if test="${not empty student and empty admin}">
 	<div id="header1">
-            header1
         </div>
         <div id="header2">
-            <a href="${conPath }/main.do" class="header1">메인으로 가기</a>
         </div>
         <div id="header3">
             <ul>
@@ -62,7 +58,6 @@
 	
 	<c:if test="${empty student and not empty admin}">
 	<div id="header1">
-            header1
         </div>
         <div id="header2">
           	관리자 로그인 상태입니다.

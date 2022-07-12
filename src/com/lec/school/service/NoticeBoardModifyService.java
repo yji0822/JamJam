@@ -15,11 +15,6 @@ public class NoticeBoardModifyService implements Service {
 		System.out.println("서비스 로직 넘어오기 성공");
 		// nNo, aName, nTitle, nContenet
 
-		/*
-		 * int pageNum = Integer.parseInt(request.getParameter("pageNum")); 
-		 * String aName = request.getParameter("aName"); String aId = request.getParameter("aId");
-		 */
-
 		int nNo = Integer.parseInt(request.getParameter("nNo"));
 		String nTitle = request.getParameter("nTitle");
 		String nContent = request.getParameter("nContent");

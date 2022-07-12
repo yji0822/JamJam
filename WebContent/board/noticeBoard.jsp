@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<link href="${conPath }/css/noticeBoard2.css" rel="stylesheet" type="text/css" />
+	<link href="${conPath }/css/noticeBoard.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
 	

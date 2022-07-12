@@ -75,7 +75,6 @@
             </div>
         </div>
 
-        <!-- 수정 해야할 곳-->
         <div id="content2">
             <div class="lunchcal1">
                 <form action="${conPath }/lunch.do">

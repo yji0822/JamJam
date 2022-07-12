@@ -6,51 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<%-- <link href="${conPath }/css/style.css" rel="stylesheet"> --%>
+<link href="${conPath }/css/todayMenu.css" rel="stylesheet">
 <link
 	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
-<style>
-* {
-	font-family: 'NanumSquareLight';
-	font-family: 'NanumSquare';
-	font-family: 'NanumSquareBold';
-	font-family: 'NanumSquareExtraBold';
-	font-family: 'NanumSquareAcb';
-	font-family: 'NanumSquareAceb';
-	font-family: 'NanumSquareAcl';
-	font-family: 'NanumSquareAcr';
-}
 
-table {
-	margin: 0 auto;
-	border: 1px solid darkgray;
-	box-sizing: border-box;
-}
-
-caption {
-	border: 1px solid darkgray;
-	padding: 20px;
-	box-sizing: border-box;
-}
-
-table th {
-	border: 1px dotted darkgray;
-	padding: 10px;
-	box-sizing: border-box;
-}
-
-table td {
-	border: 1px dotted darkgray;
-	box-sizing: border-box;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-img {
-	width: 300px;
-	height: 300px; 
-}
-</style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

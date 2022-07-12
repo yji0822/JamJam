@@ -27,9 +27,14 @@
 		
 		<!-- 필요한 것 : 급식선택(Radio 버튼) 배식일 선택 / 메뉴 입력 : String / 칼로리 : double / 식단 이미지 입력 - 데이터 베이스에는 String 값으로 -->
 	<section>
-		<div id="content1">
+	<div id="content1">
+            <div class="content1">
+                <a href="${conPath }/main.do"><img src="${conPath }/img/school.png" class="logo" alt="logo" /></a>
+            </div>
+        </div>
+		<div id="content2">
 			<form action="${conPath }/lunchIn.do" method="post" enctype="multipart/form-data">
-				<table>
+				<table class="join_table">
 					<caption>급식 메뉴 추가</caption>
 					<tr>
 						<th>급식일</th>

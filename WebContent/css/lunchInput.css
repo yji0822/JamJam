@@ -2,7 +2,7 @@
 
 section {
 	width: 1500px;
-	height: 750px;
+	height: 730px;
 	box-sizing: border-box;
 	text-align: center;
 }
@@ -31,6 +31,7 @@ section {
 
 #content2 {
 	height: 800px;
+	
 }
 
 #content2 .join {
@@ -38,6 +39,7 @@ section {
 }
 
 .join_table {
+	margin-top: 100px;
 	width: 35%;
 	border: 1px solid darkgray;
 	

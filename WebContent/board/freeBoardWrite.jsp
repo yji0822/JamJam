@@ -8,13 +8,7 @@
 	<meta charset="UTF-8">
 	
 	<link href="${conPath }/css/freeBoardWrite.css" rel="stylesheet" type="text/css" />
-	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(document).ready(function(){
-		
-		});
-	</script>
 </head>
 
 <body>

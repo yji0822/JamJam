@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<link href="${conPath }/css/noticeBoardModify2.css" rel="stylesheet" type="text/css" />
+	<link href="${conPath }/css/noticeBoardWrite.css" rel="stylesheet" type="text/css" />
 	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css"
 	rel="stylesheet">
 
@@ -31,11 +31,11 @@
 			<table>
 				<caption>공지사항 글 작성</caption>
 				<tr>
-					<th>제목</td>
+					<th>제목</th>
 					<td><input type="text" name="nTitle" required="required" size="30"></td>
 				</tr>
 				<tr>
-					<th>본문</td>
+					<th>본문</th>
 					<td><textarea name="nContent" rows="3" cols="32"></textarea></td>
 				</tr>
 				<tr>
